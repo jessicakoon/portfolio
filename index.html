@@ -301,6 +301,54 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
   font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink);
 }
 
+/* ============ CAROUSEL ============ */
+.carousel{margin-top:clamp(2.5rem,7vh,4rem);outline:none;}
+.carousel-stage{position:relative;aspect-ratio:3/2;background:var(--surface);border:1px solid var(--line-soft);overflow:hidden;}
+.carousel-slide{position:absolute;inset:0;opacity:0;transition:opacity .65s ease;}
+.carousel-slide.is-active{opacity:1;z-index:1;}
+.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+.slide-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;border:1px dashed var(--line);}
+.slide-placeholder span{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);}
+.carousel-caption-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap;}
+.carousel-caption{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink);}
+.carousel-controls{display:flex;align-items:center;gap:0.9rem;}
+.carousel-btn{
+  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:transparent;
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);font-size:1rem;
+  transition:border-color .3s ease,color .3s ease,transform .3s ease;
+}
+.carousel-btn:hover{border-color:var(--signature);color:var(--signature);transform:translateY(-2px);}
+.carousel-counter{font-size:0.72rem;letter-spacing:0.1em;color:var(--ink-soft);font-weight:600;min-width:4.6rem;text-align:center;}
+.carousel-dots{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.1rem;}
+.carousel-dot{width:7px;height:7px;padding:0;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:background .3s ease,transform .3s ease;}
+.carousel-dot.is-active{background:var(--signature);transform:scale(1.4);}
+
+/* ============ BRAND LOGOS ============ */
+.brand-logos{margin-top:clamp(2.5rem,7vh,4rem);}
+.logo-row{display:flex;flex-wrap:wrap;gap:1.2rem;}
+.logo-chip{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.7rem;
+  width:110px;padding:1.5rem 0.8rem;border:1px solid var(--line);
+  transition:border-color .35s ease, transform .35s cubic-bezier(.16,.84,.44,1), background .35s ease;
+}
+.logo-chip:hover{border-color:var(--signature);transform:translateY(-4px);background:var(--surface);}
+.logo-mark{font-family:var(--serif);font-style:italic;font-size:1.1rem;color:var(--ink);transition:color .3s ease;}
+.logo-chip:hover .logo-mark{color:var(--signature);}
+.logo-name{font-size:0.66rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-soft);text-align:center;font-weight:600;}
+.logo-chip--placeholder{border-style:dashed;opacity:0.6;}
+.logo-chip--placeholder .logo-mark{color:var(--ink-faint);}
+
+/* ============ UGC PHOTO GRID ============ */
+.ugc-photos{margin-top:clamp(2.5rem,7vh,4rem);}
+.photo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+@media(min-width:680px){.photo-grid{grid-template-columns:repeat(3,1fr);}}
+.photo-slot{
+  aspect-ratio:4/5;border:1px dashed var(--line);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;transition:border-color .3s ease;
+}
+.photo-slot:hover{border-color:var(--signature);}
+.photo-slot span{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;}
+
 /* ============ SKILLS / CAPABILITIES ============ */
 .skills{max-width:var(--max);margin:0 auto;padding:clamp(4rem,10vh,7rem) var(--pad);border-top:1px solid var(--line);}
 .skills-head{max-width:40rem;}
@@ -474,7 +522,7 @@ footer{
     <article class="entry entry--offset" data-reveal>
       <a class="work-link offset-media" href="#trade-show">
         <div class="frame r-wide">
-        <img loading="lazy" src="ABS-dailies-2.jpg" alt="ABS dailies marketing project preview">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/81dd82c2-e525-4282-90c5-7ce960058bbf_rwc_0x46x487x380x487.png?h=cb6fd579f24ae6f048e5c89a13ce244d" alt="Trade show booth marketing collateral">
           <div class="reveal-meta"><span>Experiential / Print</span><span>2026</span></div>
         </div>
       </a>
@@ -508,7 +556,7 @@ footer{
       <div>
         <h3>Art Brand Studios</h3>
         <p>Creative production and marketing for globally recognized licensing partners, including Disney and Warner Bros. — this case study is kept private out of respect for client confidentiality.</p>
-        <span class="lock-badge">● Available by request </span>
+        <span class="lock-badge">● Available on request — 2025</span>
       </div>
     </article>
 
@@ -738,9 +786,6 @@ footer{
       <p class="eyebrow">Photography</p>
       <h2>Photography</h2>
     </div>
-    <div class="case-hero-img" data-reveal>
-      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/65e8b9f7-355a-471e-9168-4ae30895a905_rwc_0x734x1836x1435x1836.jpg?h=938262dd43dcf70451b53b267ace25c4" alt="Photography series by Jessica Koon">
-    </div>
     <div class="case-body" data-reveal>
       <div class="col">
         <p class="pull">"Photography is an art of observation. It's about finding something interesting in an ordinary place — it has little to do with the things you see, and everything to do with the way you see them."</p>
@@ -752,22 +797,33 @@ footer{
         </div>
       </div>
     </div>
-    <div class="index-of-frames" data-reveal>
-      <p class="case-sub-head">Index of frames</p>
-      <div class="frame-grid">
-        <div>Wine Ads</div>
-        <div>London — Famous Stairs</div>
-        <div>17 Miles</div>
-        <div>Influencer Product Photoshoot</div>
-        <div>Top Licensing Image</div>
-        <div>Los Angeles</div>
-        <div>San Francisco</div>
-        <div>De Young Museum</div>
-        <div>Cafe Photoshoot</div>
-        <div>Mooncake Ads Photoshoot</div>
-        <div>Social Campaign — 4K+ Views</div>
-        <div>Product Photoshoot</div>
+    <div class="carousel" data-carousel data-reveal>
+      <div class="carousel-stage">
+        <div class="carousel-slide is-active" data-caption="Featured">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/65e8b9f7-355a-471e-9168-4ae30895a905_rwc_0x734x1836x1435x1836.jpg?h=938262dd43dcf70451b53b267ace25c4" alt="Featured photograph by Jessica Koon">
+        </div>
+        <div class="carousel-slide" data-caption="Wine Ads"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="London — Famous Stairs"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="17 Miles"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Influencer Product Photoshoot"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Top Licensing Image"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Los Angeles"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="San Francisco"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="De Young Museum"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Cafe Photoshoot"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Mooncake Ads Photoshoot"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Social Campaign — 4K+ Views"><div class="slide-placeholder"><span>Add Photo</span></div></div>
+        <div class="carousel-slide" data-caption="Product Photoshoot"><div class="slide-placeholder"><span>Add Photo</span></div></div>
       </div>
+      <div class="carousel-caption-bar">
+        <span class="carousel-caption" data-carousel-caption>Featured</span>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" data-prev aria-label="Previous photo">←</button>
+          <span class="carousel-counter" data-counter>01 / 13</span>
+          <button class="carousel-btn" type="button" data-next aria-label="Next photo">→</button>
+        </div>
+      </div>
+      <div class="carousel-dots" data-dots></div>
     </div>
   </section>
 
@@ -806,6 +862,38 @@ footer{
           <li><span>Unboxing</span><b>Video</b></li>
           <li><span>Product Review</span><b>Video</b></li>
         </ul>
+      </div>
+    </div>
+    <div class="brand-logos" data-reveal>
+      <p class="case-sub-head">Brands I've worked with</p>
+      <div class="logo-row">
+        <span class="logo-chip">
+          <span class="logo-mark">FK</span>
+          <span class="logo-name">Flower Knows</span>
+        </span>
+        <span class="logo-chip logo-chip--placeholder">
+          <span class="logo-mark">+</span>
+          <span class="logo-name">Add Brand</span>
+        </span>
+        <span class="logo-chip logo-chip--placeholder">
+          <span class="logo-mark">+</span>
+          <span class="logo-name">Add Brand</span>
+        </span>
+        <span class="logo-chip logo-chip--placeholder">
+          <span class="logo-mark">+</span>
+          <span class="logo-name">Add Brand</span>
+        </span>
+      </div>
+    </div>
+    <div class="ugc-photos" data-reveal>
+      <p class="case-sub-head">Photo highlights</p>
+      <div class="photo-grid">
+        <div class="photo-slot"><span>Add Photo</span></div>
+        <div class="photo-slot"><span>Add Photo</span></div>
+        <div class="photo-slot"><span>Add Photo</span></div>
+        <div class="photo-slot"><span>Add Photo</span></div>
+        <div class="photo-slot"><span>Add Photo</span></div>
+        <div class="photo-slot"><span>Add Photo</span></div>
       </div>
     </div>
     <div class="video-grid" data-reveal>
@@ -1206,6 +1294,45 @@ footer{
     }, {threshold:0.3, rootMargin:'-30% 0px -50% 0px'});
     navTargets.forEach(function(t){ navIo.observe(t); });
   }
+  // Photo carousels
+  document.querySelectorAll('[data-carousel]').forEach(function(root){
+    var slides = Array.prototype.slice.call(root.querySelectorAll('.carousel-slide'));
+    var dotsWrap = root.querySelector('[data-dots]');
+    var captionEl = root.querySelector('[data-carousel-caption]');
+    var counterEl = root.querySelector('[data-counter]');
+    var prevBtn = root.querySelector('[data-prev]');
+    var nextBtn = root.querySelector('[data-next]');
+    if(!slides.length) return;
+    var idx = 0;
+    var dots = [];
+    slides.forEach(function(s,i){
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'carousel-dot' + (i===0 ? ' is-active' : '');
+      dot.setAttribute('aria-label','Go to photo ' + (i+1));
+      dot.addEventListener('click', function(){ go(i); });
+      dotsWrap.appendChild(dot);
+      dots.push(dot);
+    });
+    function pad(n){ return n < 10 ? '0'+n : ''+n; }
+    function go(i){
+      slides[idx].classList.remove('is-active');
+      dots[idx].classList.remove('is-active');
+      idx = (i + slides.length) % slides.length;
+      slides[idx].classList.add('is-active');
+      dots[idx].classList.add('is-active');
+      if(captionEl) captionEl.textContent = slides[idx].getAttribute('data-caption') || '';
+      if(counterEl) counterEl.textContent = pad(idx+1) + ' / ' + pad(slides.length);
+    }
+    if(prevBtn) prevBtn.addEventListener('click', function(){ go(idx-1); });
+    if(nextBtn) nextBtn.addEventListener('click', function(){ go(idx+1); });
+    root.setAttribute('tabindex','0');
+    root.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft'){ go(idx-1); }
+      if(e.key === 'ArrowRight'){ go(idx+1); }
+    });
+  });
+
 })();
 </script>
 
