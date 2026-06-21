@@ -1,1 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jessica Koon — Designer, Photographer, Storyteller</title>
+<meta name="description" content="Jessica Koon is a multidisciplinary designer and marketing strategist based in the Bay Area, working across UI/UX, brand, photography, video and illustration.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --paper:#F1EDE2;
+  --paper-deep:#E7E1D0;
+  --surface:#FAF8F1;
+  --ink:#17150F;
+  --ink-soft:#6E6852;
+  --ink-faint:#A89F86;
+  --signature:#B23B26;
+  --signature-deep:#8A2C1B;
+  --line:#D9D1B8;
+  --line-soft:#E2DBC6;
+  --max:1360px;
+  --pad: clamp(1.25rem, 5vw, 5rem);
+  --serif:'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --sans:'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:400;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--signature);color:var(--surface);}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:500;letter-spacing:-0.01em;}
+p{margin:0;}
+button{font-family:inherit;cursor:pointer;}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad);}
+.eyebrow{
+  font-family:var(--sans);
+  font-size:0.7rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  display:inline-flex;
+  align-items:center;
+  gap:0.55em;
+  font-weight:600;
+}
+.eyebrow::before{
+  content:'';
+  width:6px;height:6px;border-radius:50%;
+  background:var(--signature);
+  flex:none;
+}
+.hairline{border:0;border-top:1px solid var(--line);margin:0;}
+.ext::after{content:' ↗';font-size:0.85em;}
 
+/* ============ REVEAL ============ */
+[data-reveal]{opacity:0;transform:translateY(28px);transition:opacity 0.9s cubic-bezier(.16,.84,.44,1), transform 0.9s cubic-bezier(.16,.84,.44,1);}
+[data-reveal].is-visible{opacity:1;transform:translateY(0);}
+[data-reveal="fade"]{transform:none;}
+
+/* ============ SEAL MARK ============ */
+.seal{
+  width:38px;height:38px;border-radius:50%;
+  border:1.4px solid var(--signature);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;font-size:0.95rem;color:var(--signature);
+  flex:none;
+  transition:transform .5s cubic-bezier(.16,.84,.44,1), background .35s ease, color .35s ease;
+}
+.seal:hover{background:var(--signature);color:var(--surface);transform:rotate(8deg);}
+
+/* ============ HEADER ============ */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem var(--pad);
+  background:rgba(241,237,226,0.82);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.brand{display:flex;align-items:center;gap:0.75rem;}
+.brand-name{font-family:var(--serif);font-size:1rem;letter-spacing:0.02em;}
+.brand-name span{color:var(--ink-soft);font-family:var(--sans);font-size:0.68rem;letter-spacing:0.14em;display:block;margin-top:1px;text-transform:uppercase;}
+nav.main-nav{display:flex;gap:clamp(1.25rem,3vw,2.5rem);}
+nav.main-nav a{
+  font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;
+  color:var(--ink-soft);position:relative;padding-bottom:4px;
+  transition:color .3s ease;
+}
+nav.main-nav a::after{
+  content:'';position:absolute;left:0;bottom:0;height:1px;width:0%;
+  background:var(--signature);transition:width .35s cubic-bezier(.16,.84,.44,1);
+}
+nav.main-nav a:hover,nav.main-nav a.active{color:var(--ink);}
+nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
+.nav-toggle{display:none;}
+
+/* ============ HERO ============ */
+.hero{
+  padding:clamp(3.5rem,12vh,8rem) var(--pad) clamp(2.5rem,8vh,5rem);
+  max-width:var(--max);margin:0 auto;
+}
+.hero .eyebrow{margin-bottom:1.75rem;}
+.hero h1{
+  font-size:clamp(3rem, 9.5vw, 7.8rem);
+  line-height:0.96;
+  letter-spacing:-0.025em;
+}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--signature);}
+.hero-sub{
+  margin-top:1.75rem;
+  max-width:34rem;
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.15rem,2.4vw,1.6rem);
+  color:var(--ink-soft);
+  line-height:1.45;
+}
+.role-line{
+  margin-top:2.75rem;
+  display:flex;align-items:center;gap:0.85rem;
+  font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);
+}
+.role-line .dot{width:7px;height:7px;border-radius:50%;background:var(--signature);animation:pulse 2.2s ease-in-out infinite;flex:none;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+#roleWord{color:var(--ink);font-weight:600;display:inline-block;min-width:11ch;transition:opacity .4s ease;}
+.scroll-cue{
+  margin-top:clamp(3rem,9vh,6rem);
+  display:flex;align-items:center;gap:0.9rem;
+  font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;
+}
+.scroll-cue .line{width:42px;height:1px;background:var(--ink-faint);position:relative;overflow:hidden;}
+.scroll-cue .line::after{content:'';position:absolute;left:-100%;top:0;width:100%;height:100%;background:var(--signature);animation:trace 2.6s ease-in-out infinite;}
+@keyframes trace{0%{left:-100%;}50%{left:100%;}100%{left:100%;}}
+
+/* ============ WORK INTRO ============ */
+.section-intro{padding:clamp(2.5rem,7vh,5rem) var(--pad) clamp(2rem,5vh,3rem);max-width:var(--max);margin:0 auto;}
+.section-intro h2{font-size:clamp(1.9rem,4vw,3.1rem);max-width:38rem;line-height:1.12;margin-top:1rem;}
+.section-intro .lede{margin-top:1.25rem;max-width:34rem;color:var(--ink-soft);font-size:1rem;line-height:1.7;}
+
+/* ============ WORK STREAM ============ */
+.work-stream{max-width:var(--max);margin:0 auto;padding:0 var(--pad) clamp(3rem,8vh,6rem);}
+.entry{margin-top:clamp(4rem,11vh,8rem);}
+.entry:first-child{margin-top:clamp(1rem,4vh,2rem);}
+.frame{
+  position:relative;overflow:hidden;background:var(--surface);
+  border:1px solid var(--line-soft);
+}
+.frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.1s cubic-bezier(.16,.84,.44,1), filter .8s ease;}
+.work-link{display:block;text-decoration:none;}
+.work-link:hover .frame img{transform:scale(1.035);}
+.reveal-meta{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:1.4rem 1.6rem;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;
+  background:linear-gradient(to top, rgba(23,21,15,0.55), rgba(23,21,15,0));
+  opacity:0;transform:translateY(10px);
+  transition:opacity .45s ease, transform .45s cubic-bezier(.16,.84,.44,1);
+}
+.work-link:hover .reveal-meta{opacity:1;transform:translateY(0);}
+.reveal-meta span{color:#F4F0E4;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;}
+.caption-row{
+  margin-top:1.15rem;
+  display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;
+}
+.caption-row h3{font-size:clamp(1.5rem,3.2vw,2.5rem);position:relative;display:inline-block;}
+.caption-row h3::after{content:'';position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--signature);transition:width .5s cubic-bezier(.16,.84,.44,1);}
+.work-link:hover ~ .caption-row h3::after, .entry:hover .caption-row h3::after{width:100%;}
+.caption-meta{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;white-space:nowrap;}
+.caption-desc{margin-top:0.6rem;max-width:32rem;color:var(--ink-soft);font-size:0.95rem;line-height:1.65;}
+
+/* entry size variants via aspect ratio + grid placement */
+.frame.r-full{aspect-ratio:16/8.4;}
+.frame.r-wide{aspect-ratio:16/10;}
+.frame.r-tall{aspect-ratio:4/5;}
+.frame.r-square{aspect-ratio:5/4;}
+
+.entry--full{}
+.entry--offset{display:grid;grid-template-columns:1fr;gap:2.4rem;}
+@media(min-width:860px){
+  .entry--offset{grid-template-columns:7fr 5fr;align-items:center;gap:clamp(2rem,5vw,4.5rem);}
+  .entry--offset.flip{grid-template-columns:5fr 7fr;}
+  .entry--offset.flip .offset-media{order:2;}
+  .entry--offset.flip .offset-text{order:1;}
+}
+.offset-text .caption-row{margin-top:0;flex-direction:column;align-items:flex-start;gap:0.5rem;}
+.offset-text .caption-desc{margin-top:1rem;}
+.offset-text .caption-meta{margin-top:0.35rem;}
+
+.entry--intimate{display:grid;grid-template-columns:1fr;gap:2rem;}
+@media(min-width:860px){
+  .entry--intimate{grid-template-columns:minmax(280px,38%) 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:end;}
+}
+.entry--intimate .frame{max-width:420px;}
+
+.entry--plate{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:clamp(2.5rem,6vh,3.5rem) 0;
+  display:grid;grid-template-columns:1fr;gap:1.2rem;
+}
+@media(min-width:760px){
+  .entry--plate{grid-template-columns:1fr 1.6fr;gap:clamp(2rem,6vw,5rem);}
+}
+.entry--plate .plate-label{font-family:var(--serif);font-style:italic;color:var(--ink-faint);font-size:1.1rem;}
+.entry--plate h3{font-size:clamp(1.6rem,3.4vw,2.4rem);}
+.entry--plate p{margin-top:1rem;color:var(--ink-soft);font-size:0.97rem;line-height:1.7;max-width:34rem;}
+.lock-badge{
+  display:inline-flex;align-items:center;gap:0.5rem;margin-top:1.4rem;
+  font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--signature);
+}
+
+/* ============ CASE STUDY DETAIL ============ */
+.case{
+  max-width:var(--max);margin:0 auto;
+  padding:clamp(4rem,10vh,7rem) var(--pad) clamp(3rem,8vh,5rem);
+  border-top:1px solid var(--line);
+}
+.case-breadcrumb{
+  display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+  margin-bottom:clamp(2rem,6vh,3.5rem);
+}
+.back-link{
+  font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);
+  display:inline-flex;align-items:center;gap:0.5rem;
+  transition:color .3s ease, gap .3s ease;
+}
+.back-link:hover{color:var(--signature);gap:0.75rem;}
+.case-index{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;}
+.case-head{max-width:46rem;}
+.case-head .eyebrow{margin-bottom:1.1rem;}
+.case-head h2{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.02;}
+.case-facts-bar{
+  margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3rem);
+  padding-top:1.6rem;border-top:1px solid var(--line);
+}
+.fact{min-width:7rem;}
+.fact dt{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-faint);font-weight:600;}
+.fact dd{margin:0.4rem 0 0;font-size:0.92rem;color:var(--ink);font-weight:500;}
+.case-hero-img{margin-top:clamp(2.5rem,7vh,4rem);overflow:hidden;background:var(--surface);border:1px solid var(--line-soft);}
+.case-hero-img img{width:100%;height:auto;display:block;}
+.case-body{
+  margin-top:clamp(2.5rem,7vh,4rem);
+  display:grid;grid-template-columns:1fr;gap:clamp(2rem,5vw,3.5rem);
+}
+@media(min-width:900px){.case-body{grid-template-columns:0.85fr 1.15fr;}}
+.case-body .col p + p{margin-top:1.15rem;}
+.case-body p{color:var(--ink-soft);font-size:0.99rem;line-height:1.75;}
+.case-body .pull{
+  font-family:var(--serif);font-style:italic;color:var(--ink);
+  font-size:clamp(1.3rem,2.6vw,1.7rem);line-height:1.4;
+}
+.case-sub-head{font-size:1.05rem;font-family:var(--sans);font-weight:700;letter-spacing:0.01em;color:var(--ink);margin-bottom:0.9rem;}
+.case-list{list-style:none;margin:0;padding:0;}
+.case-list li{padding:0.55rem 0;border-top:1px solid var(--line-soft);color:var(--ink-soft);font-size:0.92rem;display:flex;justify-content:space-between;gap:1rem;}
+.case-list li:last-child{border-bottom:1px solid var(--line-soft);}
+.case-list li b{color:var(--ink);font-weight:600;}
+.link-stack{display:flex;flex-direction:column;gap:0.7rem;margin-top:0.5rem;}
+.link-pill{
+  display:inline-flex;align-items:center;gap:0.5rem;width:fit-content;
+  font-size:0.85rem;font-weight:600;color:var(--ink);
+  padding:0.7rem 1.1rem;border:1px solid var(--line);
+  transition:border-color .3s ease, background .3s ease, color .3s ease;
+}
+.link-pill:hover{border-color:var(--signature);background:var(--signature);color:var(--surface);}
+
+.video-grid{margin-top:clamp(2rem,5vh,3rem);display:grid;grid-template-columns:1fr;gap:1.4rem;}
+@media(min-width:680px){.video-grid{grid-template-columns:1fr 1fr;}}
+.video-grid.single{grid-template-columns:1fr;}
+.video-card figcaption{margin-top:0.6rem;font-size:0.74rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
+.video-frame{position:relative;aspect-ratio:16/9;background:var(--surface);border:1px solid var(--line-soft);overflow:hidden;}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+
+.stat-row{display:flex;flex-wrap:wrap;gap:clamp(2rem,5vw,3.5rem);margin-top:clamp(2rem,5vh,3rem);padding:clamp(1.8rem,4vh,2.6rem) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.stat b{display:block;font-family:var(--serif);font-size:clamp(2rem,4vw,2.8rem);color:var(--signature);line-height:1;}
+.stat span{display:block;margin-top:0.5rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;max-width:11rem;}
+
+.index-of-frames{margin-top:clamp(2rem,5vh,3rem);}
+.index-of-frames .case-sub-head{margin-bottom:1.4rem;}
+.frame-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 2rem;}
+@media(min-width:680px){.frame-grid{grid-template-columns:repeat(3,1fr);}}
+.frame-grid div{
+  padding:0.85rem 0;border-top:1px solid var(--line-soft);
+  font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink);
+}
+
+/* ============ ABOUT ============ */
+.about{max-width:var(--max);margin:0 auto;padding:clamp(4rem,10vh,7rem) var(--pad);border-top:1px solid var(--line);}
+.about-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,6vw,5rem);}
+@media(min-width:900px){.about-grid{grid-template-columns:0.9fr 1.1fr;}}
+.about-portrait{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start;}
+.portrait-frame{width:128px;height:128px;border-radius:50%;overflow:hidden;border:1.4px solid var(--signature);padding:5px;}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.cap-list{list-style:none;margin:0;padding:0;width:100%;max-width:22rem;}
+.cap-list li{display:flex;justify-content:space-between;padding:0.9rem 0;border-top:1px solid var(--line);font-size:0.85rem;letter-spacing:0.04em;}
+.cap-list li:last-child{border-bottom:1px solid var(--line);}
+.cap-list li b{font-weight:600;}
+.cap-list li span{color:var(--ink-faint);}
+.about-copy h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.12;max-width:30rem;}
+.about-copy p{margin-top:1.4rem;color:var(--ink-soft);font-size:1rem;line-height:1.8;max-width:38rem;}
+.about-copy .pull-quote{
+  margin:2.2rem 0;padding-left:1.4rem;border-left:2px solid var(--signature);
+  font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.6vw,1.65rem);color:var(--ink);line-height:1.45;max-width:32rem;
+}
+
+/* ============ CONTACT ============ */
+.contact{max-width:var(--max);margin:0 auto;padding:clamp(4rem,11vh,8rem) var(--pad);border-top:1px solid var(--line);}
+.contact-inner{max-width:42rem;}
+.contact h2{font-size:clamp(2.6rem,7vw,5.2rem);line-height:1.02;margin-top:1rem;}
+.contact p.lede{margin-top:1.3rem;color:var(--ink-soft);font-size:1.05rem;line-height:1.7;max-width:32rem;}
+.email-button{
+  margin-top:2.4rem;display:inline-flex;align-items:center;gap:0.8rem;
+  background:var(--ink);color:var(--paper);
+  padding:1.1rem 1.8rem;font-size:0.95rem;font-weight:600;
+  transition:background .35s ease, transform .35s cubic-bezier(.16,.84,.44,1);
+}
+.email-button:hover{background:var(--signature);transform:translateY(-2px);}
+.social-row{margin-top:clamp(3rem,8vh,5rem);display:flex;flex-wrap:wrap;gap:0.6rem 0;}
+.social-row a{
+  font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);
+  padding:0 1.1rem;border-right:1px solid var(--line);
+  transition:color .3s ease;
+}
+.social-row a:first-child{padding-left:0;}
+.social-row a:last-child{border-right:0;}
+.social-row a:hover{color:var(--signature);}
+
+/* ============ FOOTER ============ */
+footer{
+  border-top:1px solid var(--line);
+  padding:2.2rem var(--pad) 3rem;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;
+  max-width:var(--max);margin:0 auto;
+}
+.footer-left{display:flex;align-items:center;gap:0.9rem;}
+.footer-left p{font-size:0.78rem;color:var(--ink-faint);}
+.back-top-link{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);display:inline-flex;align-items:center;gap:0.5rem;}
+.back-top-link:hover{color:var(--signature);}
+
+/* ============ FLOATING TO-TOP ============ */
+#toTop{
+  position:fixed;right:clamp(1rem,4vw,2.4rem);bottom:clamp(1rem,4vw,2.4rem);
+  width:50px;height:50px;border-radius:50%;
+  border:1.4px solid var(--signature);background:var(--paper);color:var(--signature);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  opacity:0;pointer-events:none;transform:translateY(12px);
+  transition:opacity .4s ease, transform .4s cubic-bezier(.16,.84,.44,1), background .3s ease, color .3s ease;
+  z-index:60;
+}
+#toTop.show{opacity:1;pointer-events:auto;transform:translateY(0);}
+#toTop:hover{background:var(--signature);color:var(--paper);}
+
+/* ============ RESPONSIVE NAV ============ */
+@media(max-width:680px){
+  nav.main-nav{gap:1.1rem;}
+  .case-facts-bar{gap:1.4rem;}
+  .frame-grid{grid-template-columns:repeat(2,1fr);}
+}
+:focus-visible{outline:2px solid var(--signature);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<a class="seal-skip" href="#work" style="position:absolute;left:-9999px;">Skip to work</a>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Jessica Koon — home">
+    <span class="seal">JK</span>
+    <span class="brand-name">Jessica Koon<span>Design · Photography · Strategy</span></span>
+  </a>
+  <nav class="main-nav" id="mainNav">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <p class="eyebrow">Bay Area — Multidisciplinary Design Practice</p>
+    <h1 data-reveal>Hello,<br>I'm <em>Jessica.</em></h1>
+    <p class="hero-sub" data-reveal>I design brands, interfaces and images that hold their shape — where thoughtful visuals meet measurable results.</p>
+    <div class="role-line" data-reveal="fade">
+      <span class="dot"></span> Currently working as a <span id="roleWord">UI/UX Designer</span>
+    </div>
+    <div class="scroll-cue">
+      <span class="line"></span> Scroll to selected work
+    </div>
+  </section>
+
+  <!-- ============ WORK INTRO ============ -->
+  <section class="section-intro" id="work">
+    <p class="eyebrow">Selected Work</p>
+    <h2>Ten projects, five disciplines, one point of view.</h2>
+    <p class="lede">From licensing presentations for globally recognized brands to UX case studies, photography, and original illustration — a survey of work made between 2021 and 2026.</p>
+  </section>
+
+  <!-- ============ WORK STREAM ============ -->
+  <div class="work-stream">
+
+    <!-- 1 — Brand Presentation — FULL -->
+    <article class="entry entry--full" data-reveal>
+      <a class="work-link" href="#brand-presentation">
+        <div class="frame r-full">
+          <img loading="eager" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/6bce8baf-f298-44ff-b87e-906ce6bd4ebb_rwc_48x0x704x551x704.jpg?h=2482fe59307dd2584b6d724e0c471464" alt="Brand presentation deck cover artwork">
+          <div class="reveal-meta"><span>Brand &amp; Licensing Decks</span><span>2026</span></div>
+        </div>
+      </a>
+      <div class="caption-row">
+        <a href="#brand-presentation"><h3>Brand Presentation</h3></a>
+        <span class="caption-meta">Presentation Design — 2026</span>
+      </div>
+    </article>
+
+    <!-- 2 — Trade Show — OFFSET -->
+    <article class="entry entry--offset" data-reveal>
+      <a class="work-link offset-media" href="#trade-show">
+        <div class="frame r-wide">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/81dd82c2-e525-4282-90c5-7ce960058bbf_rwc_0x46x487x380x487.png?h=cb6fd579f24ae6f048e5c89a13ce244d" alt="Trade show booth marketing collateral">
+          <div class="reveal-meta"><span>Experiential / Print</span><span>2026</span></div>
+        </div>
+      </a>
+      <div class="offset-text">
+        <div class="caption-row">
+          <a href="#trade-show"><h3>Trade Show</h3></a>
+          <span class="caption-meta">Marketing Collateral — 2026</span>
+        </div>
+        <p class="caption-desc">Booth graphics, promotional materials and production-ready files for large-format printing — built to showcase Art Brand Studios' collections to industry buyers.</p>
+      </div>
+    </article>
+
+    <!-- 3 — Twitch x Adobe — FULL feature -->
+    <article class="entry entry--full" data-reveal>
+      <a class="work-link" href="#twitch">
+        <div class="frame r-full">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/2929c357-842b-455d-8055-3e0dfb08f274_rwc_154x0x1615x1263x1615.jpg?h=d378ba944e3ab03c3e6ba85773c01ee8" alt="High-fidelity prototype screen for Twitch x Adobe Creative Jam">
+          <div class="reveal-meta"><span>UX / UI Case Study — Honorable Mention</span><span>2021</span></div>
+        </div>
+      </a>
+      <div class="caption-row">
+        <a href="#twitch"><h3>Twitch × Adobe Creative Jams</h3></a>
+        <span class="caption-meta">UX / UI Design — 2021</span>
+      </div>
+      <p class="caption-desc">A 24-hour design sprint reimagining how Twitch communities discover and share knowledge across creators — one of ten honorable-mention teams out of 400+.</p>
+    </article>
+
+    <!-- 4 — Art Brand Studios — PLATE (private/text only) -->
+    <article class="entry entry--plate" data-reveal>
+      <p class="plate-label">Confidential client work</p>
+      <div>
+        <h3>Art Brand Studios</h3>
+        <p>Creative production and marketing for globally recognized licensing partners, including Disney and Warner Bros. — this case study is kept private out of respect for client confidentiality.</p>
+        <span class="lock-badge">● Available on request — 2025</span>
+      </div>
+    </article>
+
+    <!-- 5 — Photography — OFFSET flip -->
+    <article class="entry entry--offset flip" data-reveal>
+      <a class="work-link offset-media" href="#photography">
+        <div class="frame r-wide">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/65e8b9f7-355a-471e-9168-4ae30895a905_rwc_0x734x1836x1435x1836.jpg?h=938262dd43dcf70451b53b267ace25c4" alt="Photography series by Jessica Koon">
+          <div class="reveal-meta"><span>Photography</span><span>2024</span></div>
+        </div>
+      </a>
+      <div class="offset-text">
+        <div class="caption-row">
+          <a href="#photography"><h3>Photography</h3></a>
+          <span class="caption-meta">Photography — 2024</span>
+        </div>
+        <p class="caption-desc">It's an art of observation — finding something interesting in an ordinary place, and everything to do with the way you see it.</p>
+      </div>
+    </article>
+
+    <!-- 6 — Brand Collaboration — FULL -->
+    <article class="entry entry--full" data-reveal>
+      <a class="work-link" href="#brand-collaboration">
+        <div class="frame r-full">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/17388efe-0f13-42fa-bb1c-575862c238f7_rwc_0x2461x3840x3002x3840.jpg?h=9b1ab383299af72661ba5ed2d7af9974" alt="Brand collaboration content for UGC partnerships">
+          <div class="reveal-meta"><span>UGC / Brand Partnerships</span><span>2025</span></div>
+        </div>
+      </a>
+      <div class="caption-row">
+        <a href="#brand-collaboration"><h3>Brand Collaboration</h3></a>
+        <span class="caption-meta">Content Creation — 2025</span>
+      </div>
+    </article>
+
+    <!-- 7 — Illustration — INTIMATE -->
+    <article class="entry entry--intimate" data-reveal>
+      <a class="work-link" href="#illustration">
+        <div class="frame r-tall">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/028c1e3f-5d67-426b-b72d-1c9f37241399_rwc_0x37x4070x3182x4070.jpg?h=4d36c61566b2c4ccea6dc95865d73aaa" alt="Ryuki illustration character artwork">
+          <div class="reveal-meta"><span>Illustration</span><span>2023</span></div>
+        </div>
+      </a>
+      <div class="offset-text">
+        <div class="caption-row">
+          <a href="#illustration"><h3>Illustration</h3></a>
+          <span class="caption-meta">Character Design — 2023</span>
+        </div>
+        <p class="caption-desc">Ryuki — the story of a dragon and a raccoon, turned into a small sticker shop built with a friend.</p>
+      </div>
+    </article>
+
+    <!-- 8 — Brand Catalog — OFFSET -->
+    <article class="entry entry--offset" data-reveal>
+      <a class="work-link offset-media" href="#brand-catalog">
+        <div class="frame r-wide">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/fd7522dc-2d45-4861-9cd5-b36f8e25f851_rwc_214x234x1098x858x1098.png?h=ff5399ceb107beea0e2df4d7a0af6a22" alt="Brand catalog spread cover">
+          <div class="reveal-meta"><span>Editorial / Print</span><span>2024</span></div>
+        </div>
+      </a>
+      <div class="offset-text">
+        <div class="caption-row">
+          <a href="#brand-catalog"><h3>Brand Catalog</h3></a>
+          <span class="caption-meta">Print Design — 2024</span>
+        </div>
+        <p class="caption-desc">A flip-through licensing catalog prepared for retail and partner distribution.</p>
+      </div>
+    </article>
+
+    <!-- 9 — Ryuki Animation — INTIMATE -->
+    <article class="entry entry--intimate" data-reveal>
+      <a class="work-link" href="#ryuki-animation">
+        <div class="frame r-tall">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/1ba65889-4f23-41ec-8312-a7a966f275ca_rwc_3x0x782x612x782.jpg?h=1b31cd83758ddee0de866009f456a898" alt="Ryuki Lunar New Year animation still">
+          <div class="reveal-meta"><span>Motion / Animation</span><span>2021</span></div>
+        </div>
+      </a>
+      <div class="offset-text">
+        <div class="caption-row">
+          <a href="#ryuki-animation"><h3>Ryuki New Year Animation</h3></a>
+          <span class="caption-meta">Animation — 2021</span>
+        </div>
+        <p class="caption-desc">A short Lunar New Year animation built around the Ryuki character.</p>
+      </div>
+    </article>
+
+    <!-- 10 — Social Media / Videography — FULL closer -->
+    <article class="entry entry--full" data-reveal>
+      <a class="work-link" href="#videography">
+        <div class="frame r-full">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/4ab420eb-52cb-4558-900c-663d2725d3ff_rwc_95x0x1309x1024x1309.png?h=c35a02470d5523850c86ed45220911b8" alt="Social media videography and YouTube channel cover">
+          <div class="reveal-meta"><span>Video &amp; Content Strategy</span><span>2024</span></div>
+        </div>
+      </a>
+      <div class="caption-row">
+        <a href="#videography"><h3>Social Media Marketing &amp; Videography</h3></a>
+        <span class="caption-meta">Video / Strategy — 2024</span>
+      </div>
+      <p class="caption-desc">Growing a channel from zero to 900+ subscribers in a month, and 200K views in under two weeks.</p>
+    </article>
+
+  </div>
+
+  <!-- ================================================================ -->
+  <!-- ============ CASE STUDY DETAIL SPREADS ============ -->
+  <!-- ================================================================ -->
+
+  <!-- ===== 1. BRAND PRESENTATION ===== -->
+  <section class="case" id="brand-presentation">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">01 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Presentation Design</p>
+      <h2>Brand Presentation</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2026</dd></div>
+      <div class="fact"><dt>Type</dt><dd>Pitch &amp; Licensing Decks</dd></div>
+      <div class="fact"><dt>Format</dt><dd>Digital Flipbook</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/6bce8baf-f298-44ff-b87e-906ce6bd4ebb_rwc_48x0x704x551x704.jpg?h=2482fe59307dd2584b6d724e0c471464" alt="Brand presentation deck cover">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="pull">Three presentation decks, three different audiences — built to make a collection's story land in the first thirty seconds.</p>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">View the decks</p>
+        <div class="link-stack">
+          <a class="link-pill ext" href="https://online.fliphtml5.com/Jessicakoon/qwtn/" target="_blank" rel="noopener">Brand Presentation Deck</a>
+          <a class="link-pill ext" href="https://online.fliphtml5.com/Jessicakoon/Zac_Kinkade_-_Licensing_Preview/" target="_blank" rel="noopener">Zac Kinkade — Licensing Preview</a>
+          <a class="link-pill ext" href="https://online.fliphtml5.com/Jessicakoon/osql/" target="_blank" rel="noopener">Collection Preview Deck</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. TRADE SHOW ===== -->
+  <section class="case" id="trade-show">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">02 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Experiential &amp; Print Production</p>
+      <h2>Trade Show</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2026</dd></div>
+      <div class="fact"><dt>Client</dt><dd>Art Brand Studios</dd></div>
+      <div class="fact"><dt>Output</dt><dd>Booth &amp; Print Collateral</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/81dd82c2-e525-4282-90c5-7ce960058bbf_rwc_0x46x487x380x487.png?h=cb6fd579f24ae6f048e5c89a13ce244d" alt="Trade show booth marketing collateral">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p>I supported the planning and execution of trade show marketing materials for Art Brand Studios, helping showcase the company's artwork collections and licensed brands to industry partners and buyers. The goal was a visually engaging booth presence and cohesive collateral that communicated the brand's creative direction.</p>
+        <p>I was responsible for designing and preparing the visual assets used at the show — booth graphics, promotional materials, and product displays — working closely with marketing and leadership to keep everything aligned with brand guidelines.</p>
+      </div>
+      <div class="col">
+        <p>I stayed involved throughout production: preparing files for large-format printing, coordinating artwork assets, and making sure every piece was optimized for print quality and visual impact, alongside organizing the imagery and collateral used across the booth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. TWITCH X ADOBE ===== -->
+  <section class="case" id="twitch">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">03 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">UX / UI Case Study</p>
+      <h2>Twitch × Adobe Creative Jams</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Role</dt><dd>UI / UX Designer</dd></div>
+      <div class="fact"><dt>Platform</dt><dd>Desktop Website</dd></div>
+      <div class="fact"><dt>Tools</dt><dd>Adobe XD, Illustrator</dd></div>
+      <div class="fact"><dt>Launch</dt><dd>March 2021</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/2929c357-842b-455d-8055-3e0dfb08f274_rwc_154x0x1615x1263x1615.jpg?h=d378ba944e3ab03c3e6ba85773c01ee8" alt="High-fidelity prototype screen for Twitch x Adobe Creative Jam">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="case-sub-head">Overview</p>
+        <p>Twitch communities are made up of diehard fans who learn about their passions in many different forms. Live streaming is one way to tap into knowledge — but how can that sharing become truly omnidirectional? How can a baking method from a French cookbook reach someone searching specifically for how to bake macarons?</p>
+        <p>The brief: design a third-party desktop website that serves as a single-stop resource for any media related to a topic, encouraging users to find new interests, events and communities.</p>
+        <p class="pull">82% of Twitch's audience is male, and 55% of viewers fall between 18–34 — the platform needed to feel built for every livestreamer, not just the loudest one.</p>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">Process</p>
+        <ul class="case-list">
+          <li><b>01</b><span>Brainstorm and sketch out wireframes</span></li>
+          <li><b>02</b><span>Iterate on visual and interaction design</span></li>
+          <li><b>03</b><span>Conduct user testing to stress-test the new component</span></li>
+          <li><b>04</b><span>Upload assets and finalize the layout</span></li>
+        </ul>
+        <p class="case-sub-head" style="margin-top:2rem;">Main challenges</p>
+        <p>A 24-hour build window, a 3-person team, and the need to encourage fans to create, share and discover clips, notes and chapters of content — while uplifting streamers from underrepresented communities.</p>
+      </div>
+    </div>
+    <div class="video-grid single" data-reveal>
+      <figure class="video-card">
+        <div class="video-frame">
+          <iframe src="https://xd.adobe.com/embed/605371d5-db12-4e4c-90d6-42fe948d97e3-3500/" loading="lazy" allowfullscreen title="Twitch x Adobe Creative Jam — final high-fidelity prototype"></iframe>
+        </div>
+        <figcaption>Final high-fidelity prototype</figcaption>
+      </figure>
+    </div>
+    <div class="link-stack" style="margin-top:2rem;" data-reveal>
+      <a class="link-pill ext" href="https://www.crowdcast.io/e/twitchjam/clips/606fd36633a61f0099b13e3c" target="_blank" rel="noopener">Watch the honorable-mention reveal</a>
+    </div>
+  </section>
+
+  <!-- ===== 4. PHOTOGRAPHY ===== -->
+  <section class="case" id="photography">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">05 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Photography</p>
+      <h2>Photography</h2>
+    </div>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/65e8b9f7-355a-471e-9168-4ae30895a905_rwc_0x734x1836x1435x1836.jpg?h=938262dd43dcf70451b53b267ace25c4" alt="Photography series by Jessica Koon">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="pull">"Photography is an art of observation. It's about finding something interesting in an ordinary place — it has little to do with the things you see, and everything to do with the way you see them."</p>
+      </div>
+      <div class="col">
+        <p>Frames taken across travel, product, and editorial work — from London to the De Young Museum.</p>
+        <div class="link-stack">
+          <a class="link-pill ext" href="https://500px.com/p/jessicakoon8898" target="_blank" rel="noopener">View full portfolio on 500px</a>
+        </div>
+      </div>
+    </div>
+    <div class="index-of-frames" data-reveal>
+      <p class="case-sub-head">Index of frames</p>
+      <div class="frame-grid">
+        <div>Wine Ads</div>
+        <div>London — Famous Stairs</div>
+        <div>17 Miles</div>
+        <div>Influencer Product Photoshoot</div>
+        <div>Top Licensing Image</div>
+        <div>Los Angeles</div>
+        <div>San Francisco</div>
+        <div>De Young Museum</div>
+        <div>Cafe Photoshoot</div>
+        <div>Mooncake Ads Photoshoot</div>
+        <div>Social Campaign — 4K+ Views</div>
+        <div>Product Photoshoot</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. BRAND COLLABORATION ===== -->
+  <section class="case" id="brand-collaboration">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">06 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">UGC / Brand Partnerships</p>
+      <h2>Brand Collaboration</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2025</dd></div>
+      <div class="fact"><dt>Role</dt><dd>UGC Creator</dd></div>
+      <div class="fact"><dt>Featured</dt><dd>Flower Knows Campaign</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/17388efe-0f13-42fa-bb1c-575862c238f7_rwc_0x2461x3840x3002x3840.jpg?h=9b1ab383299af72661ba5ed2d7af9974" alt="Brand collaboration content cover">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="pull">A digital playground where creativity meets community — content built to spark conversation and build connection across diverse audiences.</p>
+        <p>Work spans product demos, unboxings, and reviews, including the Flower Knows campaign.</p>
+        <div class="link-stack">
+          <a class="link-pill ext" href="https://www.instagram.com/jessicakooon/" target="_blank" rel="noopener">Instagram</a>
+          <a class="link-pill ext" href="https://www.tiktok.com/@jessicakooon" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">Content categories</p>
+        <ul class="case-list">
+          <li><span>Flower Knows Campaign</span><b>Brand Partnership</b></li>
+          <li><span>Product Demo / ASMR</span><b>Video</b></li>
+          <li><span>Unboxing</span><b>Video</b></li>
+          <li><span>Product Review</span><b>Video</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="video-grid" data-reveal>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/LUWwj-wDdG7/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Unboxing video"></iframe></div>
+        <figcaption>Unboxing</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/B2E9SpTXTXs/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Unboxing video"></iframe></div>
+        <figcaption>Unboxing</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/Fvn6MfrpDbW/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Product review video"></iframe></div>
+        <figcaption>Product Review</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/GDiEE8Hfbaq/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Product review video"></iframe></div>
+        <figcaption>Product Review</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/IhDdEx4tquh/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Product review video"></iframe></div>
+        <figcaption>Product Review</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/6LpxWNnwnaF/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Product review video"></iframe></div>
+        <figcaption>Product Review</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 6. ILLUSTRATION ===== -->
+  <section class="case" id="illustration">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">07 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Character Design</p>
+      <h2>Illustration</h2>
+    </div>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/028c1e3f-5d67-426b-b72d-1c9f37241399_rwc_0x37x4070x3182x4070.jpg?h=4d36c61566b2c4ccea6dc95865d73aaa" alt="Ryuki illustration character artwork">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p>Ryuki is the story of a dragon and a raccoon. In 2021 the drawing became a small sticker shop — a dream shared with a friend, made for anyone who loves Ryuki and wants to carry the character on a laptop, water bottle, or notebook.</p>
+        <div class="link-stack">
+          <a class="link-pill ext" href="https://www.instagram.com/sillyryuki/" target="_blank" rel="noopener">Follow Sillyryuki on Instagram</a>
+          <a class="link-pill ext" href="https://www.etsy.com/shop/sillyryuki" target="_blank" rel="noopener">Shop on Etsy</a>
+        </div>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">Index of pieces</p>
+        <div class="frame-grid" style="grid-template-columns:1fr;">
+          <div>Ice Cream</div>
+          <div>Hong Kong Street Food — Egg Waffle</div>
+          <div>Friendship Polaroid</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. BRAND CATALOG ===== -->
+  <section class="case" id="brand-catalog">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">08 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Print Design</p>
+      <h2>Brand Catalog</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2024</dd></div>
+      <div class="fact"><dt>Format</dt><dd>Digital Flip-Catalog</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/fd7522dc-2d45-4861-9cd5-b36f8e25f851_rwc_214x234x1098x858x1098.png?h=ff5399ceb107beea0e2df4d7a0af6a22" alt="Brand catalog spread cover">
+    </div>
+    <div class="video-grid single" data-reveal>
+      <figure class="video-card">
+        <div class="video-frame">
+          <iframe loading="lazy" src="https://heyzine.com/flip-book/dc75c169f0.html" allowfullscreen title="Brand catalog flip-book"></iframe>
+        </div>
+        <figcaption>Full licensing catalog — flip through</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== 8. RYUKI ANIMATION ===== -->
+  <section class="case" id="ryuki-animation">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">09 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Motion / Animation</p>
+      <h2>Ryuki New Year Animation</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2021</dd></div>
+      <div class="fact"><dt>Illustration credit</dt><dd>Sillyryuki</dd></div>
+    </dl>
+    <div class="video-grid single" data-reveal>
+      <figure class="video-card">
+        <div class="video-frame">
+          <iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/QiEikaxRUop/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Ryuki New Year animation"></iframe>
+        </div>
+        <figcaption>Ryuki — Lunar New Year animation</figcaption>
+      </figure>
+    </div>
+    <div class="link-stack" style="margin-top:1.5rem;" data-reveal>
+      <a class="link-pill ext" href="https://www.instagram.com/sillyryuki" target="_blank" rel="noopener">Support Sillyryuki on Instagram</a>
+    </div>
+  </section>
+
+  <!-- ===== 9. SOCIAL MEDIA / VIDEOGRAPHY ===== -->
+  <section class="case" id="videography">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">10 / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Video &amp; Content Strategy</p>
+      <h2>Social Media Marketing &amp; Videography</h2>
+    </div>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/4ab420eb-52cb-4558-900c-663d2725d3ff_rwc_95x0x1309x1024x1309.png?h=c35a02470d5523850c86ed45220911b8" alt="Social media videography cover">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="case-sub-head">SillyRyuki — kids' YouTube channel</p>
+        <p>Researched trending video formats and audience behavior across platforms, then used those insights to shape a new channel's content strategy — studying view counts, engagement rates and storytelling techniques to understand what drives a video's success.</p>
+        <div class="link-stack">
+          <a class="link-pill ext" href="http://www.youtube.com/@Sillyryuki" target="_blank" rel="noopener">Watch on YouTube</a>
+        </div>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">Vlog #1 — San Francisco Aquarium</p>
+        <dl class="case-facts-bar" style="border-top:none;padding-top:0;margin-top:0;">
+          <div class="fact"><dt>Role</dt><dd>Videographer</dd></div>
+          <div class="fact"><dt>Tools</dt><dd>Illustrator, Lightroom, Photoshop</dd></div>
+          <div class="fact"><dt>Launch</dt><dd>December 2019</dd></div>
+        </dl>
+      </div>
+    </div>
+    <div class="stat-row" data-reveal>
+      <div class="stat"><b>0→900+</b><span>Subscribers gained in the first month</span></div>
+      <div class="stat"><b>200K</b><span>Views in under two weeks</span></div>
+      <div class="stat"><b>25+</b><span>Videos produced and managed</span></div>
+      <div class="stat"><b>1K</b><span>Followers reached within two months</span></div>
+    </div>
+    <div class="video-grid" data-reveal>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/HSirQ2od78e/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="SillyRyuki channel highlight"></iframe></div>
+        <figcaption>SillyRyuki — Channel Highlight</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/9Qu3vaZ7TsI/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="History Facts short"></iframe></div>
+        <figcaption>Short — History Facts You Didn't Know</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/9m4sZTKayXt/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Portrait Displays tutorial"></iframe></div>
+        <figcaption>Portrait Displays — Tutorial</figcaption>
+      </figure>
+      <figure class="video-card">
+        <div class="video-frame"><iframe loading="lazy" src="https://www-ccv.adobe.io/v1/player/ccv/HKW5QeTf5HC/embed?bgcolor=%23191919&lazyLoading=true&api_key=BehancePro2View" allowfullscreen title="Vlog 1 — San Francisco Aquarium"></iframe></div>
+        <figcaption>Vlog #1 — SF Aquarium</figcaption>
+      </figure>
+    </div>
+    <div class="link-stack" style="margin-top:1.8rem;" data-reveal>
+      <a class="link-pill ext" href="https://youtu.be/8zPmmzDVB1Q" target="_blank" rel="noopener">Watch the Hong Kong vlog</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-portrait" data-reveal>
+        <div class="portrait-frame">
+          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/af62f286-c78a-4197-a5f8-8524098832a3_rwc_0x1x188x181x4096.png?h=42681c85709735de43b2e4b0c0f366c0" alt="Portrait of Jessica Koon">
+        </div>
+        <ul class="cap-list">
+          <li><b>UI / UX Design</b><span>Wireframes, prototyping, testing</span></li>
+          <li><b>Brand &amp; Visual Identity</b><span>Presentation, print, licensing</span></li>
+          <li><b>Photography</b><span>Product, travel, editorial</span></li>
+          <li><b>Video &amp; Content Strategy</b><span>Filming, editing, growth</span></li>
+          <li><b>Illustration</b><span>Character design, sticker goods</span></li>
+        </ul>
+      </div>
+      <div class="about-copy" data-reveal>
+        <p class="eyebrow">About</p>
+        <h2>A multidisciplinary designer and marketing strategist.</h2>
+        <p>I'm Jessica Koon, based in the Bay Area. My work sits at the intersection of design, storytelling and performance marketing — where thoughtful visuals meet measurable results.</p>
+        <p>With a background in design studies and several years across creative production, digital marketing and licensing, I've developed a strong understanding of how design supports business goals. At Art Brand Studios, I helped manage creative production for globally recognized brands including Disney and Warner Bros., while leading marketing initiatives that increased campaign performance and drove measurable revenue growth.</p>
+        <blockquote class="pull-quote">Growing up in a multicultural environment shaped how I see design: as a universal language that connects people and ideas across cultures.</blockquote>
+        <p>I'm passionate about building design systems and visual experiences that are both aesthetically refined and strategically effective — blending minimalism, typography and user-centered thinking with data, from optimizing landing pages to preparing production-ready artwork for large-scale distribution.</p>
+        <p>Outside of work, I enjoy travel writing, photography, and creating product content as a UGC creator — always exploring new ways brands can connect with their audiences through authentic visual narratives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's work<br>together.</h2>
+      <p class="lede">Open to design, photography and content partnerships — reach out and let's talk about what you're building.</p>
+      <a class="email-button" href="mailto:jessicakoon8898@gmail.com">jessicakoon8898@gmail.com →</a>
+    </div>
+    <div class="social-row" data-reveal>
+      <a href="https://www.linkedin.com/in/jessica-koon" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/jessicakooon/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@jessicakooon" target="_blank" rel="noopener">TikTok</a>
+      <a href="http://www.youtube.com/@jessicakooon" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://500px.com/p/jessicakoon8898" target="_blank" rel="noopener">500px</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-left">
+    <span class="seal" style="width:30px;height:30px;font-size:0.78rem;">JK</span>
+    <p>© 2026 Jessica Koon. All rights reserved.</p>
+  </div>
+  <a class="back-top-link" href="#top">Back to top ↑</a>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){
+  // Role word rotation
+  var roles = ["UI/UX Designer","Visual Designer","Photographer","Brand Strategist","Content Creator"];
+  var i = 0;
+  var el = document.getElementById('roleWord');
+  if(el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setInterval(function(){
+      i = (i+1) % roles.length;
+      el.style.opacity = 0;
+      setTimeout(function(){
+        el.textContent = roles[i];
+        el.style.opacity = 1;
+      }, 380);
+    }, 2600);
+  }
+
+  // Scroll reveal
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+    revealEls.forEach(function(elx){ io.observe(elx); });
+  } else {
+    revealEls.forEach(function(elx){ elx.classList.add('is-visible'); });
+  }
+
+  // Back to top visibility
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 700){ toTop.classList.add('show'); }
+    else { toTop.classList.remove('show'); }
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // Active nav link on scroll
+  var sections = [
+    {id:'work', link:document.querySelector('nav a[href="#work"]')},
+    {id:'about', link:document.querySelector('nav a[href="#about"]')},
+    {id:'contact', link:document.querySelector('nav a[href="#contact"]')}
+  ];
+  var navTargets = sections.map(function(s){ return document.getElementById(s.id); }).filter(Boolean);
+  if('IntersectionObserver' in window && navTargets.length){
+    var navIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var match = sections.find(function(s){ return s.id === entry.target.id; });
+        if(match && match.link){
+          if(entry.isIntersecting){
+            sections.forEach(function(s){ if(s.link) s.link.classList.remove('active'); });
+            match.link.classList.add('active');
+          }
+        }
+      });
+    }, {threshold:0.3, rootMargin:'-30% 0px -50% 0px'});
+    navTargets.forEach(function(t){ navIo.observe(t); });
+  }
+})();
+</script>
+
+</body>
+</html>
