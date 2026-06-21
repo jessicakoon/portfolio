@@ -301,18 +301,58 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
   font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--ink);
 }
 
-/* ============ ABOUT ============ */
+/* ============ SKILLS / CAPABILITIES ============ */
+.skills{max-width:var(--max);margin:0 auto;padding:clamp(4rem,10vh,7rem) var(--pad);border-top:1px solid var(--line);}
+.skills-head{max-width:40rem;}
+.skills-head h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-top:1rem;line-height:1.14;}
+.skills-head .lede{margin-top:1.1rem;color:var(--ink-soft);font-size:1rem;line-height:1.7;max-width:34rem;}
+.skill-block{
+  margin-top:clamp(3rem,7vh,4.5rem);padding-top:clamp(2rem,5vh,2.5rem);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr;gap:1.8rem;
+}
+@media(min-width:860px){.skill-block{grid-template-columns:0.8fr 2.2fr;gap:clamp(2rem,5vw,4rem);}}
+.skill-block-head h3{font-size:clamp(1.4rem,2.6vw,1.9rem);}
+.skill-block-head p{margin-top:0.6rem;font-size:0.85rem;color:var(--ink-soft);line-height:1.6;max-width:18rem;}
+.skill-group{margin-top:1.9rem;}
+.skill-group:first-child{margin-top:0;}
+.skill-group-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);margin-bottom:1rem;display:block;}
+.tool-row{display:flex;flex-wrap:wrap;gap:1.2rem 1.8rem;}
+.tool-chip{display:inline-flex;align-items:center;gap:0.65rem;}
+.tool-icon{
+  width:36px;height:36px;flex:none;border-radius:8px;border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:700;font-size:0.64rem;letter-spacing:0.01em;
+  color:var(--ink-soft);background:var(--surface);
+  transition:border-color .3s ease, color .3s ease, transform .3s cubic-bezier(.16,.84,.44,1);
+}
+.tool-chip:hover .tool-icon{border-color:var(--signature);color:var(--signature);transform:translateY(-3px);}
+.tool-chip-label{font-size:0.85rem;color:var(--ink);line-height:1.3;}
+.tool-chip-label small{display:block;font-size:0.7rem;color:var(--ink-faint);margin-top:1px;}
+.cap-row{display:flex;flex-wrap:wrap;gap:0.7rem;}
+.cap-chip{
+  font-size:0.78rem;padding:0.55rem 0.95rem;border:1px solid var(--line);color:var(--ink-soft);
+  transition:border-color .3s ease, color .3s ease;
+}
+.cap-chip:hover{border-color:var(--signature);color:var(--ink);}
+
+
 .about{max-width:var(--max);margin:0 auto;padding:clamp(4rem,10vh,7rem) var(--pad);border-top:1px solid var(--line);}
 .about-grid{display:grid;grid-template-columns:1fr;gap:clamp(2.5rem,6vw,5rem);}
 @media(min-width:900px){.about-grid{grid-template-columns:0.9fr 1.1fr;}}
 .about-portrait{display:flex;flex-direction:column;gap:1.6rem;align-items:flex-start;}
 .portrait-frame{width:128px;height:128px;border-radius:50%;overflow:hidden;border:1.4px solid var(--signature);padding:5px;}
 .portrait-frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
-.cap-list{list-style:none;margin:0;padding:0;width:100%;max-width:22rem;}
-.cap-list li{display:flex;justify-content:space-between;padding:0.9rem 0;border-top:1px solid var(--line);font-size:0.85rem;letter-spacing:0.04em;}
-.cap-list li:last-child{border-bottom:1px solid var(--line);}
-.cap-list li b{font-weight:600;}
-.cap-list li span{color:var(--ink-faint);}
+.portrait-frame--lg{width:188px;height:188px;}
+.portrait-placeholder{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--surface);border-style:dashed;
+}
+.portrait-placeholder span{
+  font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);
+}
+.portrait-caption{margin-top:-0.4rem;}
+.portrait-name{font-family:var(--serif);font-size:1.1rem;color:var(--ink);}
+.portrait-loc{margin-top:0.25rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
 .about-copy h2{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.12;max-width:30rem;}
 .about-copy p{margin-top:1.4rem;color:var(--ink-soft);font-size:1rem;line-height:1.8;max-width:38rem;}
 .about-copy .pull-quote{
@@ -382,7 +422,6 @@ footer{
 
 <header class="site-header">
   <a class="brand" href="#top" aria-label="Jessica Koon — home">
-    <span class="seal">JK</span>
     <span class="brand-name">Jessica Koon<span>Design · Photography · Strategy</span></span>
   </a>
   <nav class="main-nav" id="mainNav">
@@ -469,7 +508,7 @@ footer{
       <div>
         <h3>Art Brand Studios</h3>
         <p>Creative production and marketing for globally recognized licensing partners, including Disney and Warner Bros. — this case study is kept private out of respect for client confidentiality.</p>
-        <span class="lock-badge">● Available on request — 2025</span>
+        <span class="lock-badge">● Available on request </span>
       </div>
     </article>
 
@@ -946,16 +985,13 @@ footer{
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-portrait" data-reveal>
-        <div class="portrait-frame">
-          <img loading="lazy" src="https://cdn.myportfolio.com/fbe10d41-59e2-4d1a-aa38-8cac3643115c/af62f286-c78a-4197-a5f8-8524098832a3_rwc_0x1x188x181x4096.png?h=42681c85709735de43b2e4b0c0f366c0" alt="Portrait of Jessica Koon">
+        <div class="portrait-frame portrait-frame--lg portrait-placeholder">
+          <span>Add Photo</span>
         </div>
-        <ul class="cap-list">
-          <li><b>UI / UX Design</b><span>Wireframes, prototyping, testing</span></li>
-          <li><b>Brand &amp; Visual Identity</b><span>Presentation, print, licensing</span></li>
-          <li><b>Photography</b><span>Product, travel, editorial</span></li>
-          <li><b>Video &amp; Content Strategy</b><span>Filming, editing, growth</span></li>
-          <li><b>Illustration</b><span>Character design, sticker goods</span></li>
-        </ul>
+        <div class="portrait-caption">
+          <p class="portrait-name">Jessica Koon</p>
+          <p class="portrait-loc">Bay Area, California</p>
+        </div>
       </div>
       <div class="about-copy" data-reveal>
         <p class="eyebrow">About</p>
@@ -965,6 +1001,114 @@ footer{
         <blockquote class="pull-quote">Growing up in a multicultural environment shaped how I see design: as a universal language that connects people and ideas across cultures.</blockquote>
         <p>I'm passionate about building design systems and visual experiences that are both aesthetically refined and strategically effective — blending minimalism, typography and user-centered thinking with data, from optimizing landing pages to preparing production-ready artwork for large-scale distribution.</p>
         <p>Outside of work, I enjoy travel writing, photography, and creating product content as a UGC creator — always exploring new ways brands can connect with their audiences through authentic visual narratives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS / CAPABILITIES ============ -->
+  <section class="skills" id="capabilities">
+    <div class="skills-head" data-reveal>
+      <p class="eyebrow">Capabilities</p>
+      <h2>Tools and expertise across strategy, design, and production.</h2>
+      <p class="lede">A working kit built across creative production, performance marketing, and licensing — spanning the platforms that plan the work and the software that makes it.</p>
+    </div>
+
+    <div class="skill-block" data-reveal>
+      <div class="skill-block-head">
+        <h3>Marketing &amp; Analytics</h3>
+        <p>Campaign planning, paid acquisition, and the systems that keep performance honest.</p>
+      </div>
+      <div class="skill-block-body">
+        <div class="skill-group">
+          <span class="skill-group-label">Paid Social</span>
+          <div class="tool-row">
+            <span class="tool-chip"><span class="tool-icon">IG</span><span class="tool-chip-label">Instagram</span></span>
+            <span class="tool-chip"><span class="tool-icon">in</span><span class="tool-chip-label">LinkedIn</span></span>
+            <span class="tool-chip"><span class="tool-icon">X</span><span class="tool-chip-label">Twitter / X</span></span>
+            <span class="tool-chip"><span class="tool-icon">FB</span><span class="tool-chip-label">Facebook</span></span>
+            <span class="tool-chip"><span class="tool-icon">TT</span><span class="tool-chip-label">TikTok</span></span>
+            <span class="tool-chip"><span class="tool-icon">P</span><span class="tool-chip-label">Pinterest</span></span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Platforms &amp; Systems</span>
+          <div class="tool-row">
+            <span class="tool-chip"><span class="tool-icon">Ads</span><span class="tool-chip-label">Google Ads<small>SEM</small></span></span>
+            <span class="tool-chip"><span class="tool-icon">Kl</span><span class="tool-chip-label">Klaviyo<small>Marketing Automation</small></span></span>
+            <span class="tool-chip"><span class="tool-icon">Sf</span><span class="tool-chip-label">Salesforce</span></span>
+            <span class="tool-chip"><span class="tool-icon">Ns</span><span class="tool-chip-label">NetSuite<small>ERP</small></span></span>
+            <span class="tool-chip"><span class="tool-icon">MS</span><span class="tool-chip-label">Microsoft Office<small>Word, Excel, PowerPoint</small></span></span>
+            <span class="tool-chip"><span class="tool-icon">Mo</span><span class="tool-chip-label">Monday</span></span>
+            <span class="tool-chip"><span class="tool-icon">Wr</span><span class="tool-chip-label">Wrike</span></span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Strategy &amp; Insight</span>
+          <div class="cap-row">
+            <span class="cap-chip">ROI Optimization</span>
+            <span class="cap-chip">Performance Analytics</span>
+            <span class="cap-chip">Strategic Market Analysis</span>
+            <span class="cap-chip">Audience Insights</span>
+            <span class="cap-chip">Trend Analysis</span>
+            <span class="cap-chip">AI-Assisted Ideation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-block" data-reveal>
+      <div class="skill-block-head">
+        <h3>Creative &amp; Design</h3>
+        <p>The Adobe ecosystem, plus the lighter-weight tools used for fast iteration.</p>
+      </div>
+      <div class="skill-block-body">
+        <div class="skill-group">
+          <span class="skill-group-label">Adobe Creative Suite</span>
+          <div class="tool-row">
+            <span class="tool-chip"><span class="tool-icon">Ps</span><span class="tool-chip-label">Photoshop</span></span>
+            <span class="tool-chip"><span class="tool-icon">Ai</span><span class="tool-chip-label">Illustrator</span></span>
+            <span class="tool-chip"><span class="tool-icon">Id</span><span class="tool-chip-label">InDesign</span></span>
+            <span class="tool-chip"><span class="tool-icon">Xd</span><span class="tool-chip-label">XD</span></span>
+            <span class="tool-chip"><span class="tool-icon">Pr</span><span class="tool-chip-label">Premiere Pro</span></span>
+            <span class="tool-chip"><span class="tool-icon">Lr</span><span class="tool-chip-label">Lightroom</span></span>
+            <span class="tool-chip"><span class="tool-icon">Ae</span><span class="tool-chip-label">After Effects</span></span>
+            <span class="tool-chip"><span class="tool-icon">Ac</span><span class="tool-chip-label">Acrobat</span></span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Design &amp; Illustration</span>
+          <div class="tool-row">
+            <span class="tool-chip"><span class="tool-icon">Fg</span><span class="tool-chip-label">Figma</span></span>
+            <span class="tool-chip"><span class="tool-icon">Sk</span><span class="tool-chip-label">Sketch</span></span>
+            <span class="tool-chip"><span class="tool-icon">Cv</span><span class="tool-chip-label">Canva</span></span>
+            <span class="tool-chip"><span class="tool-icon">Pc</span><span class="tool-chip-label">Procreate</span></span>
+            <span class="tool-chip"><span class="tool-icon">Wc</span><span class="tool-chip-label">Wacom</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-block" data-reveal>
+      <div class="skill-block-head">
+        <h3>Video &amp; Multimedia</h3>
+        <p>Editing software and post-production craft for short- and long-form content.</p>
+      </div>
+      <div class="skill-block-body">
+        <div class="skill-group">
+          <span class="skill-group-label">Video Editing</span>
+          <div class="tool-row">
+            <span class="tool-chip"><span class="tool-icon">Cc</span><span class="tool-chip-label">CapCut</span></span>
+            <span class="tool-chip"><span class="tool-icon">iM</span><span class="tool-chip-label">iMovie</span></span>
+            <span class="tool-chip"><span class="tool-icon">Fc</span><span class="tool-chip-label">Final Cut Pro</span></span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <span class="skill-group-label">Capabilities</span>
+          <div class="cap-row">
+            <span class="cap-chip">Photography Retouching</span>
+            <span class="cap-chip">Creative Strategy</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
