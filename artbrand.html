@@ -449,7 +449,7 @@ footer p{font-size:.78rem;color:var(--ink-faint);}
 
   <!-- CAMPAIGNS -->
   <div class="section-head" data-reveal>
-    <p class="eyebrow">What I Built</p>
+    <p class="eyebrow">Work Highlights</p>
     <h2>Campaign work across paid, owned, and creative channels.</h2>
   </div>
 
@@ -591,49 +591,97 @@ footer p{font-size:.78rem;color:var(--ink-faint);}
   <!-- CREATIVE ASSETS -->
   <div class="section-head" data-reveal>
     <p class="eyebrow">Creative Assets</p>
-    <h2>Campaign creative samples.</h2>
+    <h2>Campaign creative samples — click any to explore.</h2>
   </div>
-<div class="asset-grid" data-reveal>
-  <div class="asset-slot">
-    <!-- Links smoothly to the in-page section below instead of an external page -->
-    <a href="#campaign-samples" class="asset-image-link" title="Click to view campaign case study">
-      <div class="asset-image-wrapper">
+ 
+  <div class="sample-grid" id="sample-grid" data-reveal>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="0" aria-label="Holiday Email Campaign">
+      <span class="sample-ph-title">New product Email Campaign</span>
         <img loading="lazy" src="image/Elvis_email_1.png" alt="New product launch Campaign Email Header Design">
-        <div class="zoom-overlay"><span>Click to View Case Study</span></div>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="1" aria-label="Instagram Story Ad">
+      <span class="sample-ph-badge">Paid Social</span>
+      <span class="sample-ph-icon">📱</span>
+      <span class="sample-ph-num">02 / 08</span>
+      <span class="sample-ph-title">Instagram Story Ad</span>
+      <span class="sample-ph-sub">Prospecting creative — Meta Ads</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="2" aria-label="Meta Carousel Collection Launch">
+      <span class="sample-ph-badge">Paid Social</span>
+      <span class="sample-ph-icon">🎨</span>
+      <span class="sample-ph-num">03 / 08</span>
+      <span class="sample-ph-title">Meta Carousel — Collection Launch</span>
+      <span class="sample-ph-sub">A/B tested multi-frame creative</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="3" aria-label="New Release Email Template">
+      <span class="sample-ph-badge">Email</span>
+      <span class="sample-ph-icon">📧</span>
+      <span class="sample-ph-num">04 / 08</span>
+      <span class="sample-ph-title">New Release Email Template</span>
+      <span class="sample-ph-sub">Collection drop — Klaviyo</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="4" aria-label="Limited Edition Landing Page">
+      <span class="sample-ph-badge">Landing Page</span>
+      <span class="sample-ph-icon">🖥</span>
+      <span class="sample-ph-num">05 / 08</span>
+      <span class="sample-ph-title">Limited Edition Landing Page</span>
+      <span class="sample-ph-sub">Conversion-optimised product page</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="5" aria-label="Performance Dashboard">
+      <span class="sample-ph-badge">Analytics</span>
+      <span class="sample-ph-icon">📊</span>
+      <span class="sample-ph-num">06 / 08</span>
+      <span class="sample-ph-title">Performance Dashboard</span>
+      <span class="sample-ph-sub">Weekly KPIs — Salesforce &amp; GA4</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="6" aria-label="Video Ad Reel">
+      <span class="sample-ph-badge">Video</span>
+      <span class="sample-ph-icon">🎬</span>
+      <span class="sample-ph-num">07 / 08</span>
+      <span class="sample-ph-title">Video Ad — Reel Format</span>
+      <span class="sample-ph-sub">Vertical short-form paid creative</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <div class="sample-ph" tabindex="0" data-idx="7" aria-label="Organic Social Post">
+      <span class="sample-ph-badge">Organic</span>
+      <span class="sample-ph-icon">🖨</span>
+      <span class="sample-ph-num">08 / 08</span>
+      <span class="sample-ph-title">Organic Social Post</span>
+      <span class="sample-ph-sub">Instagram &amp; Facebook feed creative</span>
+      <span class="sample-ph-cue">Explore →</span>
+    </div>
+ 
+    <!-- Inline expand row — spans full grid width, injected below active card row by JS -->
+    <div class="sample-expand-row" id="sample-expand-row">
+      <div class="sample-expand" id="sample-expand-body">
+        <!-- Rendered by JS -->
       </div>
-    </a>
-    <span class="asset-slot-label">Email Header<br>New product Campaign</span>
+    </div>
+ 
   </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">📱</span>
-      <span class="asset-slot-label">Instagram Story<br>Ad Creative</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">🎨</span>
-      <span class="asset-slot-label">Meta Carousel<br>Collection Launch</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">📧</span>
-      <span class="asset-slot-label">Email Template<br>New Release</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">🖥</span>
-      <span class="asset-slot-label">Landing Page<br>Limited Edition</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">📊</span>
-      <span class="asset-slot-label">Performance<br>Dashboard</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">🎬</span>
-      <span class="asset-slot-label">Video Ad<br>Reel Format</span>
-    </div>
-    <div class="asset-slot">
-      <span class="asset-slot-icon">🖨</span>
-      <span class="asset-slot-label">Social Post<br>Organic Feed</span>
+ 
+  <!-- WIDE IMAGE BLOCK -->
+  <div class="img-wide" data-reveal style="margin-top:clamp(3rem,8vh,5rem);">
+    <div class="img-placeholder">
+      <span>📸</span>
+      <span>Campaign overview screenshot or mockup — add image here</span>
     </div>
   </div>
-  
+ 
   <!-- TESTIMONIAL / REFLECTION -->
   <div class="testimonial" data-reveal>
     <blockquote>
@@ -641,7 +689,7 @@ footer p{font-size:.78rem;color:var(--ink-faint);}
     </blockquote>
     <cite>— Jessica Koon, reflection on the project</cite>
   </div>
-
+ 
   <!-- DELIVERABLES -->
   <div class="section-head" data-reveal>
     <p class="eyebrow">Deliverables</p>
@@ -681,7 +729,7 @@ footer p{font-size:.78rem;color:var(--ink-faint);}
       <span class="check-label">Audience Segmentation Maps<small>Collector segments, lookalikes, and retargeting lists</small></span>
     </div>
   </div>
-
+ 
   <!-- TOOLS USED -->
   <div class="section-head" data-reveal>
     <p class="eyebrow">Tools Used</p>
@@ -704,81 +752,275 @@ footer p{font-size:.78rem;color:var(--ink-faint);}
     <span style="font-size:.78rem;padding:.55rem 1rem;border:1px solid var(--line);color:var(--ink-soft);">Microsoft PowerPoint</span>
     <span style="font-size:.78rem;padding:.55rem 1rem;border:1px solid var(--line);color:var(--ink-soft);">Canva</span>
   </div>
-
+ 
 </main>
-
+ 
 <footer>
   <p>© 2026 Jessica Koon · Art Brand Studios Case Study · Confidential</p>
   <a class="back-top-link" href="#top">Back to top ↑</a>
 </footer>
-
+ 
 </div><!-- /page -->
-
+ 
 <button id="toTop" aria-label="Back to top" style="display:none;">↑</button>
-
+ 
 <script>
 (function(){
+  /* ========== PASSWORD ========== */
   var PASS = 'thomaskinkade';
   var gate = document.getElementById('gate');
   var page = document.getElementById('page');
-  var input = document.getElementById('gate-input');
+  var inputEl = document.getElementById('gate-input');
   var btn = document.getElementById('gate-submit');
   var errEl = document.getElementById('gate-error');
   var toTop = document.getElementById('toTop');
-
+ 
   function unlock(){
     gate.classList.add('unlocked');
     page.style.visibility = 'visible';
     toTop.style.display = 'flex';
     document.body.style.overflow = '';
-    // kick off reveal observers
     initReveal();
     setTimeout(function(){ gate.style.display = 'none'; }, 750);
   }
-
   function tryPassword(){
-    var val = input.value.trim().toLowerCase();
+    var val = inputEl.value.trim().toLowerCase();
     if(val === PASS){
       errEl.classList.remove('show');
       unlock();
     } else {
       errEl.classList.add('show');
-      input.value = '';
-      input.focus();
-      input.style.borderColor = 'var(--signature)';
-      setTimeout(function(){ input.style.borderColor = ''; }, 1200);
+      inputEl.value = '';
+      inputEl.focus();
+      inputEl.style.borderColor = 'var(--signature)';
+      setTimeout(function(){ inputEl.style.borderColor = ''; }, 1200);
     }
   }
-
   btn.addEventListener('click', tryPassword);
-  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryPassword(); });
+  inputEl.addEventListener('keydown', function(e){ if(e.key==='Enter') tryPassword(); });
   document.body.style.overflow = 'hidden';
-  input.focus();
-
+  inputEl.focus();
+ 
+  /* ========== REVEAL ========== */
   function initReveal(){
     var els = document.querySelectorAll('[data-reveal]');
     if('IntersectionObserver' in window){
       var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            entry.target.classList.add('is-visible');
-            io.unobserve(entry.target);
-          }
-        });
-      }, {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+      },{threshold:.12,rootMargin:'0px 0px -6% 0px'});
       els.forEach(function(el){ io.observe(el); });
-    } else {
-      els.forEach(function(el){ el.classList.add('is-visible'); });
-    }
+    } else { els.forEach(function(el){ el.classList.add('is-visible'); }); }
   }
-
+ 
+  /* ========== BACK TO TOP ========== */
   window.addEventListener('scroll', function(){
-    if(window.scrollY > 600){ toTop.classList.add('show'); }
-    else { toTop.classList.remove('show'); }
-  }, {passive:true});
-  toTop.addEventListener('click', function(){
-    window.scrollTo({top:0, behavior:'smooth'});
+    if(window.scrollY>600) toTop.classList.add('show'); else toTop.classList.remove('show');
+  },{passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0,behavior:'smooth'}); });
+ 
+  /* ========== SAMPLE DATA ========== */
+  var SAMPLES = [
+    {
+      channel:'Email Marketing',title:'Holiday Email Campaign',icon:'🖼',
+      desc:'Designed and deployed a multi-send holiday email campaign targeting active collectors and lapsed subscribers. Each of the three sends — teaser, main launch, and last-chance — featured custom header artwork adapting Thomas Kinkade’s luminous painting style into email-safe formats.',
+      desc2:'Subject line testing was run across two audience segments, with open rates and click-through rates tracked in Klaviyo. The holiday window drove a significant spike in direct-to-consumer revenue.',
+      facts:[{dt:'Platform',dd:'Klaviyo'},{dt:'Format',dd:'HTML Email — 3-Send Series'},{dt:'Audience',dd:'Collectors + Lapsed Subscribers'},{dt:'Result',dd:'Add open rate / revenue'}],
+      stats:[{b:'XX%',span:'Open rate — above industry avg'},{b:'XX%',span:'Click-to-open rate'},{b:'$XX K',span:'Revenue attributed'}],
+      assets:['Email header — Teaser','Email header — Launch','Email header — Last Chance','Footer banner'],
+      strip:['Subject line A/B log','Send schedule','Audience segment map','Click-map heatmap'],
+      tags:['Klaviyo','Email Design','HTML Email','Segmentation','A/B Testing','Copywriting']
+    },
+    {
+      channel:'Paid Social',title:'Instagram Story Ad',icon:'📱',
+      desc:'Created a suite of vertical 9:16 story ads for Instagram prospecting campaigns. The brief required adapting Thomas Kinkade’s warm, detail-rich paintings into high-contrast, mobile-first formats that stop scroll in the first two seconds — while maintaining the brand’s soft, luminous identity.',
+      desc2:'Three creative directions were tested: a painterly still-frame with text overlay, an animated pan-and-zoom, and a lifestyle-context frame. The animated pan-zoom variant outperformed static by a measurable margin, informing future creative decisions.',
+      facts:[{dt:'Platform',dd:'Meta Ads — Instagram Stories'},{dt:'Format',dd:'9:16 Static + Animated'},{dt:'Objective',dd:'Prospecting — New Collector Acquisition'},{dt:'Tools',dd:'Photoshop, After Effects, Meta Ads Manager'}],
+      stats:[{b:'XX%',span:'Lower CPC vs. previous creative'},{b:'XX×',span:'ROAS on top-performing variant'},{b:'XX K',span:'Impressions in first two weeks'}],
+      assets:['Story Ad — Variant A (Static)','Story Ad — Variant B (Animated)','Story Ad — Variant C (Lifestyle)','Thumbnail frame'],
+      strip:['A/B test results','Audience targeting setup','Budget allocation chart','Creative brief doc'],
+      tags:['Meta Ads','Instagram','Story Format','Animation','A/B Testing','ROAS']
+    },
+    {
+      channel:'Paid Social',title:'Meta Carousel — Collection Launch',icon:'🎨',
+      desc:'Designed a five-frame carousel ad campaign to launch a new Thomas Kinkade collection on Facebook and Instagram. Each frame featured a different painting from the collection, with consistent typography and a narrative arc.',
+      desc2:'The carousel format outperformed single-image ads for link clicks and drove lower cost-per-click in this campaign. Creative learnings were documented and applied to subsequent collection drops.',
+      facts:[{dt:'Platform',dd:'Meta — Facebook &amp; Instagram'},{dt:'Format',dd:'5-Frame Carousel'},{dt:'Objective',dd:'Collection Launch — Link Clicks &amp; Conversions'},{dt:'Tools',dd:'Photoshop, Illustrator, Meta Ads Manager'}],
+      stats:[{b:'XX%',span:'Higher CTR vs. single-image'},{b:'XX%',span:'Lower cost-per-click'},{b:'5',span:'Frames — each a different painting'}],
+      assets:['Carousel Frame 1 — Cover','Carousel Frame 2','Carousel Frame 3','Carousel Frame 4','Carousel Frame 5 — CTA'],
+      strip:['Campaign brief','Targeting setup','Copy variants tested','Results summary'],
+      tags:['Meta Ads','Facebook','Instagram','Carousel','Collection Launch','Photoshop']
+    },
+    {
+      channel:'Email Marketing',title:'New Release Email Template',icon:'📧',
+      desc:'Built a reusable email template in Klaviyo for Thomas Kinkade new-release announcements. The template accommodates different painting orientations and variable copy length, making it flexible for the product team to populate for each drop.',
+      desc2:'A modular block structure — hero image, detail crop, artist quote, product specs, and a primary CTA — reduced production time per send and maintained visual consistency across every new release email.',
+      facts:[{dt:'Platform',dd:'Klaviyo'},{dt:'Format',dd:'Modular HTML Template'},{dt:'Audience',dd:'Active Collectors + Waitlist'},{dt:'Tools',dd:'Klaviyo Editor, Photoshop, InDesign'}],
+      stats:[{b:'XX%',span:'Reduction in per-send production time'},{b:'XX%',span:'Average open rate on release sends'},{b:'XX',span:'Sends using this template'}],
+      assets:['Template — Desktop view','Template — Mobile view','Hero image block variants','CTA button states'],
+      strip:['Template component map','Mobile responsiveness test','Image optimization notes','Klaviyo setup doc'],
+      tags:['Klaviyo','Email Template','Modular Design','HTML Email','Mobile-First','InDesign']
+    },
+    {
+      channel:'Landing Page',title:'Limited Edition Landing Page',icon:'🖥',
+      desc:'Designed the layout and creative assets for a limited edition Thomas Kinkade artwork landing page, built to drive direct purchase. The page leads with the painting full-bleed, followed by edition details, artist biography, and a persistent purchase CTA.',
+      desc2:'I provided design specs, asset files, and copy direction to the web and sales teams. The page conversion rate was tracked in Google Analytics, with iterative changes made to CTA placement based on heatmap data.',
+      facts:[{dt:'Format',dd:'Web Landing Page'},{dt:'Objective',dd:'Direct Sale — Limited Edition'},{dt:'Tools',dd:'Photoshop, Illustrator, Figma, GA4'},{dt:'Result',dd:'Add your conversion rate'}],
+      stats:[{b:'XX%',span:'Page conversion rate'},{b:'XX s',span:'Average time on page'},{b:'XX%',span:'CTA click-through rate'}],
+      assets:['Hero section mockup','Edition details block','Artist bio section','Mobile layout'],
+      strip:['Wireframe — desktop','Wireframe — mobile','Heatmap analysis','Final handoff spec'],
+      tags:['Landing Page','Figma','Conversion Optimisation','UX Design','Google Analytics','Limited Edition']
+    },
+    {
+      channel:'Analytics',title:'Performance Dashboard',icon:'📊',
+      desc:'Built and maintained a weekly performance reporting dashboard for the marketing team, pulling data from Google Analytics 4, Meta Ads Manager, Klaviyo, and Salesforce. Tracked core KPIs — ROAS, CPC, email open rates, conversion rate, and revenue by channel.',
+      desc2:'I established a consistent reporting cadence and template, reducing report assembly time and surfacing actionable insights faster. Key underperformers were flagged with clear next steps, and top-performing creative was highlighted to inform future briefs.',
+      facts:[{dt:'Tools',dd:'Google Analytics 4, Salesforce, Meta Ads, Klaviyo'},{dt:'Format',dd:'Weekly + Monthly Report'},{dt:'Audience',dd:'Marketing Team + Leadership'},{dt:'Cadence',dd:'Weekly summary / Monthly deep-dive'}],
+      stats:[{b:'XX%',span:'Reduction in report assembly time'},{b:'4',span:'Data sources consolidated'},{b:'XX',span:'KPIs tracked weekly'}],
+      assets:['Weekly report — cover','Channel performance table','Creative performance breakdown','Month-over-month trend chart'],
+      strip:['Dashboard template','Data source map','KPI definitions doc','Monthly executive summary'],
+      tags:['Google Analytics 4','Salesforce','Meta Ads','Klaviyo','Reporting','ROI Optimisation']
+    },
+    {
+      channel:'Video',title:'Video Ad — Reel Format',icon:'🎬',
+      desc:'Produced short-form vertical video ad creative for Meta Reels and Instagram Stories placements. The brief was to create a 15–30 second spot that communicated the warmth and detail of Thomas Kinkade’s art in a native, mobile-first format — avoiding the polished feel that often underperforms on social.',
+      desc2:'I edited existing footage, animated painting details, and layered original sound design and licensed music. Multiple length variants (6s, 15s, 30s) were produced to serve different placement requirements and funnel stages.',
+      facts:[{dt:'Placements',dd:'Meta Reels, Instagram Stories'},{dt:'Lengths',dd:'6s / 15s / 30s variants'},{dt:'Tools',dd:'Premiere Pro, After Effects, CapCut'},{dt:'Objective',dd:'Awareness + Retargeting'}],
+      stats:[{b:'XX%',span:'Video completion rate (30s cut)'},{b:'XX s',span:'Average watch time'},{b:'XX%',span:'Lower CPM vs. static creative'}],
+      assets:['30s cut — storyboard','15s cut — final frame','6s cut — thumbnail','Sound design notes'],
+      strip:['Storyboard — all cuts','Edit timeline screenshot','Caption variants','Platform spec checklist'],
+      tags:['Premiere Pro','After Effects','Reels','Video Ads','Meta','CapCut','Motion']
+    },
+    {
+      channel:'Organic Social',title:'Organic Social Post',icon:'🖨',
+      desc:'Managed and created organic social content for Thomas Kinkade Studios across Instagram and Facebook, maintaining a consistent posting cadence that balanced promotional content with brand storytelling, artist history, and painting detail spotlights.',
+      desc2:'I developed a content pillar framework — “The Art”, “The Story”, “The Collection”, “The Community” — that structured the content calendar and ensured variety. Carousel posts highlighting painting details consistently outperformed single-image posts in saves and shares.',
+      facts:[{dt:'Platforms',dd:'Instagram, Facebook'},{dt:'Cadence',dd:'3–5 posts per week'},{dt:'Tools',dd:'Photoshop, Illustrator, Canva, Later'},{dt:'Format',dd:'Feed, Carousel, Reels, Stories'}],
+      stats:[{b:'XX%',span:'Average engagement rate'},{b:'XX K',span:'Total organic reach per month'},{b:'4',span:'Content pillars managed'}],
+      assets:['Feed post — Art Spotlight','Carousel — Painting Details','Story — Behind the Art','Reel — Studio Process'],
+      strip:['Content calendar — Month 1','Content pillar framework','Post performance breakdown','Caption style guide'],
+      tags:['Instagram','Facebook','Organic Social','Content Strategy','Photoshop','Canva','Content Calendar']
+    }
+  ];
+ 
+  /* ========== INLINE EXPAND ========== */
+  var expandRow = document.getElementById('sample-expand-row');
+  var expandBody = document.getElementById('sample-expand-body');
+  var cards = document.querySelectorAll('.sample-ph');
+  var activeIdx = -1;
+ 
+  function pad(n){ return n < 10 ? '0'+n : ''+n; }
+ 
+  function renderExpand(idx){
+    var s = SAMPLES[idx];
+ 
+    var factsHtml = s.facts.map(function(f){
+      return '<div class="sx-fact"><dt>'+f.dt+'</dt><dd>'+f.dd+'</dd></div>';
+    }).join('');
+ 
+    var statsHtml = s.stats.map(function(st){
+      return '<div class="sx-stat"><b>'+st.b+'</b><span>'+st.span+'</span></div>';
+    }).join('');
+ 
+    var assetsHtml = s.assets.map(function(a,i){
+      return '<div class="sx-asset"><span class="sx-asset-n">'+pad(i+1)+'</span>'
+        +'<span>🖼</span><span class="sx-asset-lbl">'+a+'<br><span style="opacity:.6;font-size:.55rem;">Upload image</span></span></div>';
+    }).join('');
+ 
+    var filmHtml = s.strip.map(function(l){
+      return '<div class="sx-film"><span style="font-size:1.4rem;opacity:.18;">📄</span><span>'+l+'</span><span style="opacity:.6;font-size:.54rem;">Upload image</span></div>';
+    }).join('');
+ 
+    var tagsHtml = s.tags.map(function(t){
+      return '<span class="sx-tag">'+t+'</span>';
+    }).join('');
+ 
+    var prevBtn2 = idx > 0 ? '<button class="sx-nav-btn" id="sx-prev">← '+SAMPLES[idx-1].title+'</button>' : '<span></span>';
+    var nextBtn2 = idx < SAMPLES.length-1 ? '<button class="sx-nav-btn" id="sx-next">'+SAMPLES[idx+1].title+' →</button>' : '<span></span>';
+ 
+    expandBody.innerHTML =
+      '<div class="sx-top">'
+        +'<button class="sx-close" id="sx-close-btn">✕ Close</button>'
+        +'<span class="sx-idx">'+pad(idx+1)+' / '+pad(SAMPLES.length)+'</span>'
+      +'</div>'
+      +'<div class="sx-eyebrow">'+s.channel+'</div>'
+      +'<h2 class="sx-title">'+s.title+'</h2>'
+      +'<dl class="sx-facts">'+factsHtml+'</dl>'
+      +'<div class="sx-hero"><span>'+s.icon+'</span><span>Add hero image — overview screenshot or campaign mockup</span></div>'
+      +'<div class="sx-body"><div>'
+        +'<p class="sx-pull">'+s.desc+'</p>'
+      +'</div><div>'
+        +'<p>'+s.desc2+'</p>'
+      +'</div></div>'
+      +'<div class="sx-stats">'+statsHtml+'</div>'
+      +'<p class="sx-lbl">Creative Assets</p>'
+      +'<div class="sx-assets">'+assetsHtml+'</div>'
+      +'<p class="sx-lbl">Supporting Materials</p>'
+      +'<div class="sx-strip">'+filmHtml+'</div>'
+      +'<p class="sx-lbl">Tags &amp; Tools</p>'
+      +'<div class="sx-tags">'+tagsHtml+'</div>'
+      +'<span class="sx-upload-note">↑ Replace placeholder slots with your actual campaign images and screenshots</span>'
+      +'<div class="sx-nav">'+prevBtn2+nextBtn2+'</div>';
+ 
+    /* wire close + prev/next inside expand */
+    document.getElementById('sx-close-btn').addEventListener('click', closeExpand);
+    var sp = document.getElementById('sx-prev');
+    var sn = document.getElementById('sx-next');
+    if(sp) sp.addEventListener('click', function(){ openExpand(idx-1); });
+    if(sn) sn.addEventListener('click', function(){ openExpand(idx+1); });
+  }
+ 
+  function openExpand(idx){
+    /* deactivate old card */
+    if(activeIdx >= 0) cards[activeIdx].classList.remove('is-active');
+ 
+    /* same card clicked again = close */
+    if(idx === activeIdx){
+      closeExpand();
+      return;
+    }
+ 
+    activeIdx = idx;
+    cards[idx].classList.add('is-active');
+ 
+    /* move expand row after this card's row in the grid */
+    var grid = document.getElementById('sample-grid');
+    var allCards = Array.prototype.slice.call(grid.querySelectorAll('.sample-ph'));
+    /* figure out how many cols */
+    var cols = window.innerWidth >= 680 ? 4 : 2;
+    var rowEnd = Math.ceil((idx+1) / cols) * cols - 1;
+    var anchor = allCards[Math.min(rowEnd, allCards.length-1)];
+    anchor.parentNode.insertBefore(expandRow, anchor.nextSibling);
+ 
+    renderExpand(idx);
+ 
+    /* open */
+    expandRow.classList.add('is-open');
+ 
+    /* scroll into view */
+    setTimeout(function(){
+      expandRow.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 80);
+  }
+ 
+  function closeExpand(){
+    expandRow.classList.remove('is-open');
+    if(activeIdx >= 0){ cards[activeIdx].classList.remove('is-active'); }
+    activeIdx = -1;
+  }
+ 
+  /* wire placeholder cards */
+  cards.forEach(function(card, i){
+    function activate(){ openExpand(i); }
+    card.addEventListener('click', activate);
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); activate(); }
+    });
   });
+ 
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && activeIdx >= 0) closeExpand();
+  });
+ 
 })();
 </script>
 </body>
