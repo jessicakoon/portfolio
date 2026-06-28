@@ -436,6 +436,9 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
 .portrait-placeholder span{
   font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);
 }
+/* When portrait frame has a real image, hide the placeholder background */
+.portrait-frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
+.portrait-frame:has(img[src]:not([src=''])){background:transparent;border-style:solid;}
 .portrait-caption{margin-top:-0.4rem;}
 .portrait-name{font-family:var(--serif);font-size:1.1rem;color:var(--ink);}
 .portrait-loc{margin-top:0.25rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
@@ -786,16 +789,25 @@ footer{
       </div>
       <div class="ts-grid">
         <div class="ts-slot ts-slot--wide">
-          <span class="ts-slot-badge">Booth </span>
-          <img loading="lazy" src="image/2022-Booth-4.jpg" > 
+          <span class="ts-slot-badge">Booth</span>
+          <img loading="lazy" src="image/2022-Booth-4.jpg" alt="Art Brand Studios booth overview — Licensing Expo 2022">
           <span class="ts-slot-cap">Licensing Expo — Booth F142, May 2022</span>
         </div>
-        <div class="ts-slot"><div class="ts-slot-ph">          
- <img loading="lazy" src="image/2022-Booth-1.jpg" > </div></div>
-        <div class="ts-slot"><div class="ts-slot-ph"> <img loading="lazy" src="image/2022-Booth-2.jpg" > </div></div>
-        <div class="ts-slot"><div class="ts-slot-ph"> <img loading="lazy" src="image/2022-Booth-3.jpg" > </div></div>
-        <div class="ts-slot"><div class="ts-slot-ph"> <img loading="lazy" src="" > </div>
-        <div class="ts-slot"><div class="ts-slot-ph"> <img loading="lazy" src="image/2022-Booth.jpg" > </div></div>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth-1.jpg" alt="Trade show 2022">
+        </div>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth-2.jpg" alt="Trade show 2022">
+        </div>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth-3.jpg" alt="Trade show 2022">
+        </div>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Add Image</span></div>
+        </div>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth.jpg" alt="Trade show 2022 — booth">
+        </div>
       </div>
     </div>
 
@@ -808,7 +820,7 @@ footer{
       </div>
       <div class="ts-grid">
         <div class="ts-slot ts-slot--wide"><div class="ts-slot-ph"><span class="ts-slot-badge">Booth</span><span class="ts-slot-label">Booth Overview — 2023</span></div></div>
-        <div class="ts-slot"><div class="ts-slot-ph"><img loading="lazy" src="image/tradeshow2023-1.jpg" ><span class="ts-slot-label">Full Booth Spread</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Full Booth Spread</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Banner Left</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Banner Right</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Lookbook / Catalog</span></div></div>
@@ -849,7 +861,7 @@ footer{
       </div>
       <div class="ts-grid">
         <div class="ts-slot ts-slot--wide"><div class="ts-slot-ph"><span class="ts-slot-badge">Booth</span><span class="ts-slot-label">Booth Overview — 2025</span></div></div>
-        <div class="ts-slot"><div class="ts-slot-ph"><img loading="lazy" src="" > <span class="ts-slot-label">Booth Full Width</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Booth Full Width</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Hero Banner</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Hanging Signage</span></div></div>
         <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Collection Display</span></div></div>
@@ -1232,8 +1244,8 @@ footer{
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-portrait" data-reveal>
-        <div class="portrait-frame portrait-frame--lg portrait-placeholder">
-          <img loading="lazy" src="image/_DSC0945-617.jpg" alt="bio photo">
+        <div class="portrait-frame portrait-frame--lg">
+          <img loading="lazy" src="image/_DSC0945-617.jpg" alt="Jessica Koon — bio photo">
         </div>
         <div class="portrait-caption">
           <p class="portrait-name">Jessica Koon</p>
