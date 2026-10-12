@@ -384,7 +384,7 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
 .cap-chip:hover{border-color:var(--signature);color:var(--ink);}
 
 
-/* ============ TRADE SHOW — YEAR GRIDS ============ */
+/* ============ TRADE SHOW — AUTO-SIZE GRIDS ============ */
 .ts-section-label{display:flex;align-items:center;gap:1.4rem;margin:clamp(2.5rem,6vh,4rem) 0 1.6rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--ink-soft);}
 .ts-section-label::after{content:'';flex:1;height:1px;background:var(--line);}
 .ts-year-block{margin-bottom:clamp(2.5rem,6vh,4rem);}
@@ -392,32 +392,34 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
 .ts-year-num{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2rem);color:var(--ink-faint);line-height:1;}
 .ts-year-line{flex:1;height:1px;background:var(--line-soft);}
 .ts-year-count{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);}
-.ts-grid{display:grid;gap:.85rem;grid-template-columns:repeat(2,1fr);}
+.ts-grid{display:grid;gap:1rem;grid-template-columns:repeat(2,1fr);align-items:start;}
 @media(min-width:540px){.ts-grid{grid-template-columns:repeat(3,1fr);}}
 @media(min-width:860px){.ts-grid{grid-template-columns:repeat(4,1fr);}}
 @media(min-width:1100px){.ts-grid{grid-template-columns:repeat(5,1fr);}}
-.ts-slot{aspect-ratio:4/3;background:var(--surface);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;padding:.8rem;text-align:center;position:relative;overflow:hidden;transition:border-color .3s ease,transform .35s cubic-bezier(.16,.84,.44,1);}
-.ts-slot:hover{border-color:var(--signature);transform:scale(1.025);}
-.ts-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.ts-slot-label{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);line-height:1.4;position:relative;z-index:1;}
+.ts-slot{background:var(--surface);border:1px dashed var(--line);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:border-color .3s ease,transform .35s cubic-bezier(.16,.84,.44,1),box-shadow .35s ease;}
+.ts-slot:hover{border-color:var(--signature);transform:translateY(-3px);box-shadow:0 8px 28px -8px rgba(23,21,15,.14);}
+.ts-slot img{width:100%;height:auto;display:block;position:relative;}
+.ts-slot-ph{min-height:140px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1rem;text-align:center;flex:1;}
+.ts-slot-label{font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);line-height:1.5;}
 .ts-slot-badge{position:absolute;top:.5rem;left:.5rem;font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:var(--signature);color:var(--paper);padding:.18rem .42rem;z-index:2;}
-.ts-slot--wide{grid-column:span 2;aspect-ratio:16/7;}
-.ts-slot--tall{grid-row:span 2;aspect-ratio:3/5;}
-/* Wild Wing */
+.ts-slot-cap{padding:.5rem .7rem;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;line-height:1.4;border-top:1px solid var(--line-soft);}
+.ts-slot--wide{grid-column:span 2;}
+.ts-slot--xl{grid-column:span 3;}
 .ts-wildwing{margin-top:clamp(3rem,8vh,5rem);padding-top:clamp(2rem,5vh,3rem);border-top:2px solid var(--signature);}
 .ts-wildwing-head{margin-bottom:clamp(1.5rem,4vh,2.5rem);}
 .ts-wildwing-head h3{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-top:.6rem;}
 .ts-wildwing-head p{margin-top:.8rem;font-size:.95rem;color:var(--ink-soft);line-height:1.7;max-width:36rem;}
-.ts-ww-grid{display:grid;gap:1rem;grid-template-columns:1fr;}
-@media(min-width:680px){.ts-ww-grid{grid-template-columns:1.5fr 1fr 1fr;}}
-.ts-ww-slot{background:var(--surface);border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.55rem;padding:1rem;text-align:center;transition:border-color .3s ease,transform .35s cubic-bezier(.16,.84,.44,1);position:relative;overflow:hidden;}
-.ts-ww-slot:hover{border-color:var(--signature);transform:scale(1.015);}
-.ts-ww-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
-.ts-ww-slot--main{aspect-ratio:4/3;grid-row:span 2;}
-.ts-ww-slot--sq{aspect-ratio:1/1;}
-.ts-ww-slot--rect{aspect-ratio:16/9;}
-.ts-ww-slot-label{font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);position:relative;z-index:1;line-height:1.4;}
-.ts-ww-slot-icon{font-size:1.4rem;opacity:.2;position:relative;z-index:1;}
+.ts-ww-grid{display:grid;gap:1rem;grid-template-columns:repeat(2,1fr);align-items:start;}
+@media(min-width:680px){.ts-ww-grid{grid-template-columns:repeat(3,1fr);}}
+@media(min-width:1000px){.ts-ww-grid{grid-template-columns:repeat(4,1fr);}}
+.ts-ww-slot{background:var(--surface);border:1px dashed var(--line);display:flex;flex-direction:column;transition:border-color .3s ease,transform .35s cubic-bezier(.16,.84,.44,1);overflow:hidden;}
+.ts-ww-slot:hover{border-color:var(--signature);transform:translateY(-3px);}
+.ts-ww-slot img{width:100%;height:auto;display:block;position:relative;}
+.ts-ww-slot-ph{min-height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1rem;text-align:center;flex:1;}
+.ts-ww-slot-label{font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);line-height:1.4;}
+.ts-ww-slot-icon{font-size:1.4rem;opacity:.2;}
+.ts-ww-slot-cap{padding:.5rem .7rem;font-size:.6rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;border-top:1px solid var(--line-soft);}
+.ts-ww-slot--wide{grid-column:span 2;}
 
 /* ============ ABOUT ============ */
 .about{max-width:var(--max);margin:0 auto;padding:clamp(4rem,10vh,7rem) var(--pad);border-top:1px solid var(--line);}
@@ -434,6 +436,9 @@ nav.main-nav a:hover::after,nav.main-nav a.active::after{width:100%;}
 .portrait-placeholder span{
   font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;color:var(--ink-faint);
 }
+/* When portrait frame has a real image, hide the placeholder background */
+.portrait-frame img{width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;}
+.portrait-frame:has(img[src]:not([src=''])){background:transparent;border-style:solid;}
 .portrait-caption{margin-top:-0.4rem;}
 .portrait-name{font-family:var(--serif);font-size:1.1rem;color:var(--ink);}
 .portrait-loc{margin-top:0.25rem;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;}
@@ -519,7 +524,7 @@ footer{
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="hero">
-    <p class="eyebrow">Bay Area</p>
+    <p class="eyebrow">Bay Area — Multidisciplinary Design Practice</p>
     <h1 data-reveal>Hello,<br>I'm <em>Jessica.</em></h1>
     <p class="hero-sub" data-reveal>I design brands, interfaces and images that hold their shape — where thoughtful visuals meet measurable results.</p>
     <div class="role-line" data-reveal="fade">
@@ -539,17 +544,17 @@ footer{
   <!-- ============ WORK STREAM ============ -->
   <div class="work-stream">
 
-    <!-- 1 — Brand Strategy — FULL -->
+    <!-- 1 — Brand Presentation — FULL -->
     <article class="entry entry--full" data-reveal>
       <a class="work-link" href="#brand-presentation">
         <div class="frame r-wide">
-          <img loading="eager" src="image/Harry_Potter_Hogwarts_Castle.jpg" alt="Brand presentation deck cover artwork">
-          <div class="reveal-meta"><span>Brand &amp; Licensing Strategy </span><span>2026</span></div>
+          <img loading="eager" src="image/HP-AI-printer.jpg" alt="Beeline Group × HP">
+          <div class="reveal-meta"><span>Brand &amp; Digital Marketing · Ecommerce · Account Management · Content Operations </span><span>2026</span></div>
         </div>
       </a>
       <div class="caption-row">
-        <a href="#brand-presentation"><h3>Brand Presentation</h3></a>
-        <span class="caption-meta"> Brand Strategy · Presentation Design · Licensing · 2021–2026 </span>
+        <a href="#brand-presentation"><h3>Digital Marketing</h3></a>
+        <span class="caption-meta">Presentation Design — 2026</span>
       </div>
     </article>
 
@@ -589,7 +594,7 @@ footer{
 <article class="entry entry--offset" data-reveal>
   <a class="work-link offset-media" href="artbrand.html">
     <div class="frame r-wide">
-      <img loading="lazy" src="image/HarryPotter_GreatHall.jpg" alt="Art Brand Studios Confidential Case Study" style="filter);">
+      <img loading="lazy" src="image/HarryPotter_GreatHall.jpg" alt="Art Brand Studios Confidential Case Study" style="filter: brightness(0.45);">
       <div class="reveal-meta"><span>Licensing &amp; Production</span><span>● Password Required</span></div>
     </div>
   </a>
@@ -599,12 +604,28 @@ footer{
       <span class="caption-meta"> Marketing and Branding Strategies — 2021-2026 </span>
     </div>
     <p class="caption-desc">Creative production and marketing infrastructure handled for globally recognized licensing partners, including Disney and Warner Bros.</p>
-    <a href="artbrand.html" class="lock-badge">
+    <a href="art-brand-studios-protected.html" class="lock-badge">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="margin-right: 3px; vertical-align: text-bottom;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
       Unlock Case Study — Password Required
     </a>
   </div>
 </article>
+
+
+    <!-- HP — Harry Potter Licensing Project — FULL -->
+    <article class="entry entry--full" data-reveal>
+      <a class="work-link" href="#hp-project">
+        <div class="frame r-wide">
+          <img loading="lazy" src="image/Harry_Potter_Hogwarts_Castle.jpg" alt="Harry Potter licensing project — Art Brand Studios">
+          <div class="reveal-meta"><span>Licensing · Brand Design · Print</span><span>2025</span></div>
+        </div>
+      </a>
+      <div class="caption-row">
+        <a href="#hp-project"><h3>Harry Potter Licensing</h3></a>
+        <span class="caption-meta">Brand &amp; Licensing Design — 2025</span>
+      </div>
+      <p class="caption-desc">Creative production for the Harry Potter licensed collection at Art Brand Studios — spanning brand presentation, print collateral, and marketing assets for the Warner Bros. partnership.</p>
+    </article>
 
     <!-- 5 — Photography — OFFSET flip -->
     <article class="entry entry--offset flip" data-reveal>
@@ -709,7 +730,7 @@ footer{
   <!-- ============ CASE STUDY DETAIL SPREADS ============ -->
   <!-- ================================================================ -->
 
-  <!-- ===== 1. Brand Strategy ===== -->
+  <!-- ===== 1. BRAND PRESENTATION ===== -->
   <section class="case" id="brand-presentation">
     <div class="case-breadcrumb">
       <a class="back-link" href="#work">← Back to Work</a>
@@ -722,7 +743,7 @@ footer{
     <dl class="case-facts-bar" data-reveal>
       <div class="fact"><dt>Year</dt><dd> 2021 - 2026</dd></div>
       <div class="fact"><dt>Type</dt><dd>Pitch &amp; Licensing Decks</dd></div>
-      <div class="fact"><dt>Format</dt><dd>Digital Asset </dd></div>
+      <div class="fact"><dt>Format</dt><dd>Digital Flipbook</dd></div>
     </dl>
     <div class="case-hero-img" data-reveal>
       <img loading="lazy" src="image/Harry_Potter_Hogwarts_Castle.jpg" alt="Brand presentation deck cover">
@@ -775,200 +796,212 @@ footer{
     <!-- YEAR 2022 -->
     <div class="ts-section-label" data-reveal><span>Year by Year</span></div>
 
+    <!-- ── 2022 ── -->
     <div class="ts-year-block" data-reveal>
       <div class="ts-year-strip">
         <span class="ts-year-num">2022</span>
         <span class="ts-year-line"></span>
-        <span class="ts-year-count">Add images</span>
+        <span class="ts-year-count">Licensing International Expo — Las Vegas</span>
       </div>
       <div class="ts-grid">
         <div class="ts-slot ts-slot--wide">
           <span class="ts-slot-badge">Booth</span>
-          <img loading="lazy" src="image/2022-booth-4.jpg" alt="ABS Booth Overview 2022">
+          <img loading="lazy" src="image/2022-Booth-4.jpg" alt="Art Brand Studios booth overview — Licensing Expo 2022">
+          <span class="ts-slot-cap">Licensing Expo — Booth F142, May 2022</span>
         </div>
         <div class="ts-slot">
-         <img loading="lazy" src="image/2022-booth.jpg" alt="ABS Booth Overview 2022">
+          <img loading="lazy" src="image/2022-Booth-1.jpg" alt="Trade show 2022">
         </div>
         <div class="ts-slot">
-       
-        </div>
-                <div class="ts-slot ts-slot--tall">
-        <span class="ts-slot-badge"> Marketing </span>
-         <img loading="lazy" src="image/2022-design-02.jpg" alt="ABS Booth Overview 2022">
+          <img loading="lazy" src="image/2022-Booth-2.jpg" alt="Trade show 2022">
         </div>
         <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth-3.jpg" alt="Trade show 2022">
         </div>
         <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Add Image</span></div>
+        </div>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/2022-Booth.jpg" alt="Trade show 2022 — booth">
         </div>
       </div>
     </div>
 
-    <!-- YEAR 2023 -->
+    <!-- ── 2023 ── -->
     <div class="ts-year-block" data-reveal>
       <div class="ts-year-strip">
         <span class="ts-year-num">2023</span>
         <span class="ts-year-line"></span>
-        <span class="ts-year-count">Add images</span>
+        <span class="ts-year-count">Add images — each displays at its own size, nothing cropped</span>
       </div>
       <div class="ts-grid">
-        <div class="ts-slot ts-slot--tall">
-          <span class="ts-slot-badge">Booth</span>
-          <span class="ts-slot-label">Booth Overview — 2023</span>
-        </div>
-        <div class="ts-slot ts-slot--wide">
-          <span class="ts-slot-label">Full Booth Spread</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Banner Left</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Banner Right</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Lookbook / Catalog</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Floor Graphic</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Product Display</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Printed Collateral</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Show Photography</span>
-        </div>
+        <div class="ts-slot ts-slot--wide"><div class="ts-slot-ph"><span class="ts-slot-badge">Booth</span><span class="ts-slot-label">Booth Overview — 2023</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Full Booth Spread</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Banner Left</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Banner Right</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Lookbook / Catalog</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Floor Graphic</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Product Display</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Printed Collateral</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Show Photography</span></div></div>
       </div>
     </div>
 
-    <!-- YEAR 2024 -->
+    <!-- ── 2024 ── -->
     <div class="ts-year-block" data-reveal>
       <div class="ts-year-strip">
         <span class="ts-year-num">2024</span>
         <span class="ts-year-line"></span>
-        <span class="ts-year-count">Add images</span>
+        <span class="ts-year-count">Add images — each displays at its own size, nothing cropped</span>
       </div>
       <div class="ts-grid">
-        <div class="ts-slot ts-slot--wide">
-          <span class="ts-slot-badge">Booth</span>
-          <span class="ts-slot-label">Booth Overview — 2024</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Hero Signage</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Side Panel</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Back Wall</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Printed Brochure</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Product Lookbook</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Licensed Brand Display</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Giveaway / Promo</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Show Day Photo</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Detail Shot</span>
-        </div>
+        <div class="ts-slot ts-slot--wide"><div class="ts-slot-ph"><span class="ts-slot-badge">Booth</span><span class="ts-slot-label">Booth Overview — 2024</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Hero Signage</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Side Panel</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Back Wall</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Printed Brochure</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Product Lookbook</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Licensed Brand Display</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Giveaway / Promo</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Show Day Photo</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Detail Shot</span></div></div>
       </div>
     </div>
 
-    <!-- YEAR 2025 -->
+    <!-- ── 2025 ── -->
     <div class="ts-year-block" data-reveal>
       <div class="ts-year-strip">
         <span class="ts-year-num">2025</span>
         <span class="ts-year-line"></span>
-        <span class="ts-year-count">Add images</span>
+        <span class="ts-year-count">Add images — each displays at its own size, nothing cropped</span>
       </div>
       <div class="ts-grid">
-        <div class="ts-slot ts-slot--tall">
-          <span class="ts-slot-badge">Booth</span>
-          <span class="ts-slot-label">Booth Overview — 2025</span>
-        </div>
-        <div class="ts-slot ts-slot--wide">
-          <span class="ts-slot-label">Booth Full Width</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Hero Banner</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Hanging Signage</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Collection Display</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Table Cover</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Digital Screen Asset</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Flyer / One-Pager</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Licensed Brand Panel</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Show Photography</span>
-        </div>
-        <div class="ts-slot">
-          <span class="ts-slot-label">Detail — Artwork Print</span>
-        </div>
+        <div class="ts-slot ts-slot--wide"><div class="ts-slot-ph"><span class="ts-slot-badge">Booth</span><span class="ts-slot-label">Booth Overview — 2025</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Booth Full Width</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Hero Banner</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Hanging Signage</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Collection Display</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Table Cover</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Digital Screen Asset</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Flyer / One-Pager</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Licensed Brand Panel</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Show Photography</span></div></div>
+        <div class="ts-slot"><div class="ts-slot-ph"><span class="ts-slot-label">Detail — Artwork Print</span></div></div>
       </div>
     </div>
 
-    <!-- WILD WING SECTION -->
+    <!-- ── WILD WING ── -->
     <div class="ts-wildwing" data-reveal>
       <div class="ts-wildwing-head">
         <p class="eyebrow">Brand Spotlight</p>
-        <h3>Wild Wing — Booth Design</h3>
-        <p>Wild Wings 
-Dedicated booth environment developed for the Wild Wings licensing partnership to showcase their featured Ducks Unlimited Artist of the Year. Project included structural graphics and a promotional postcard campaign designed to expand brand reach across the exhibition floor.</p>
+        <h3>Wild Wing Café — Booth Design</h3>
+        <p>A dedicated booth design for the Wild Wing Café licensing partnership — developed to showcase the brand's identity within the Art Brand Studios trade show environment.</p>
       </div>
       <div class="ts-ww-grid">
-        <div class="ts-ww-slot ts-ww-slot--main">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Booth Overview<br>Wild Wing </span>
+        <div class="ts-ww-slot ts-ww-slot--wide"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Booth Overview — Wild Wing Café</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Hero Banner</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Brand Signage</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Product Display Layout</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Printed Collateral</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Detail Shot</span></div></div>
+        <div class="ts-ww-slot"><div class="ts-ww-slot-ph"><span class="ts-ww-slot-icon">🖼</span><span class="ts-ww-slot-label">Show Photography</span></div></div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ===== HP — HARRY POTTER LICENSING ===== -->
+  <section class="case" id="hp-project">
+    <div class="case-breadcrumb">
+      <a class="back-link" href="#work">← Back to Work</a>
+      <span class="case-index">New / Selected Work</span>
+    </div>
+    <div class="case-head" data-reveal>
+      <p class="eyebrow">Licensing · Brand Design · Print</p>
+      <h2>Harry Potter Licensing</h2>
+    </div>
+    <dl class="case-facts-bar" data-reveal>
+      <div class="fact"><dt>Year</dt><dd>2025</dd></div>
+      <div class="fact"><dt>Client</dt><dd>Art Brand Studios × Warner Bros.</dd></div>
+      <div class="fact"><dt>Role</dt><dd>Brand &amp; Creative Designer</dd></div>
+      <div class="fact"><dt>Output</dt><dd>Licensing Decks, Print Collateral, Marketing Assets</dd></div>
+    </dl>
+    <div class="case-hero-img" data-reveal>
+      <img loading="lazy" src="image/Harry_Potter_Hogwarts_Castle.jpg" alt="Harry Potter — Hogwarts Castle licensing artwork">
+    </div>
+    <div class="case-body" data-reveal>
+      <div class="col">
+        <p class="pull">Creative work produced for the Harry Potter licensed collection — translating one of the world's most recognized IPs into polished presentation materials, print assets, and marketing collateral for Art Brand Studios.</p>
+        <p>Working within Warner Bros.' strict brand guidelines, I developed production-ready materials that balanced the magic of the Wizarding World with Art Brand Studios' clean, professional licensing aesthetic.</p>
+      </div>
+      <div class="col">
+        <p>Deliverables included brand presentation decks, trade show collateral, print-ready artwork files, and marketing assets prepared for distribution to retail and licensing partners. Each piece required meticulous attention to IP accuracy — verifying asset usage rights, color consistency, and brand compliance at every stage.</p>
+        <p>The Harry Potter collection represented one of the highest-profile licensing partnerships in Art Brand Studios' portfolio, requiring fast turnaround and close collaboration across the sales, creative, and licensing teams.</p>
+      </div>
+    </div>
+
+    <!-- IMAGE GRID — add your HP project images here -->
+    <div class="ts-section-label" data-reveal><span>Project Assets</span></div>
+    <div class="ts-year-block" data-reveal>
+      <div class="ts-year-strip">
+        <span class="ts-year-num">2025</span>
+        <span class="ts-year-line"></span>
+        <span class="ts-year-count">Harry Potter Collection — Art Brand Studios</span>
+      </div>
+      <div class="ts-grid">
+        <div class="ts-slot ts-slot--wide">
+          <span class="ts-slot-badge">Hero</span>
+          <img loading="lazy" src="image/Harry_Potter_Hogwarts_Castle.jpg" alt="Harry Potter — Hogwarts Castle">
+          <span class="ts-slot-cap">Hogwarts Castle — Licensed Artwork</span>
         </div>
-        <div class="ts-ww-slot ts-ww-slot--sq">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Hero Banner</span>
+        <div class="ts-slot">
+          <img loading="lazy" src="image/HarryPotter_GreatHall.jpg" alt="Harry Potter — Great Hall" style="filter:brightness(0.7);">
         </div>
-        <div class="ts-ww-slot ts-ww-slot--sq">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Brand Signage</span>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Brand Presentation Deck</span></div>
         </div>
-        <div class="ts-ww-slot ts-ww-slot--rect">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Product Display Layout</span>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Print Collateral</span></div>
         </div>
-        <div class="ts-ww-slot ts-ww-slot--rect">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Printed Collateral</span>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Trade Show Asset</span></div>
         </div>
-        <div class="ts-ww-slot ts-ww-slot--sq">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Detail Shot</span>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Marketing Material</span></div>
         </div>
-        <div class="ts-ww-slot ts-ww-slot--sq">
-          <span class="ts-ww-slot-icon">🖼</span>
-          <span class="ts-ww-slot-label">Show Photography</span>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Licensing Preview</span></div>
+        </div>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Retail Display</span></div>
+        </div>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Add Image</span></div>
+        </div>
+        <div class="ts-slot">
+          <div class="ts-slot-ph"><span class="ts-slot-label">Add Image</span></div>
         </div>
       </div>
     </div>
 
+    <div class="case-body" data-reveal style="margin-top:clamp(2rem,5vh,3rem);">
+      <div class="col">
+        <p class="case-sub-head">What I worked on</p>
+        <ul class="case-list">
+          <li><b>Brand Decks</b><span>Licensing presentations for partner outreach</span></li>
+          <li><b>Print Collateral</b><span>Trade show and retail-ready files</span></li>
+          <li><b>Asset Prep</b><span>Production-ready files for large-format print</span></li>
+          <li><b>Marketing Materials</b><span>Campaign visuals and promotional assets</span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <p class="case-sub-head">Add your project details</p>
+        <p style="color:var(--ink-faint);font-size:.88rem;border:1px dashed var(--line);padding:1.2rem;line-height:1.7;">
+          Replace this block with specifics — campaign metrics, tools used, notable outcomes, or a description of your exact role on this project. What made the Harry Potter collection stand out from other licensed work?
+        </p>
+      </div>
+    </div>
   </section>
 
   <!-- ===== 3. TWITCH X ADOBE ===== -->
@@ -1037,7 +1070,7 @@ Dedicated booth environment developed for the Wild Wings licensing partnership t
         <p class="pull">"Photography is an art of observation. It's about finding something interesting in an ordinary place — it has little to do with the things you see, and everything to do with the way you see them."</p>
       </div>
       <div class="col">
-        <p>Frames taken across travel, product, and editorial work — capturing moments from San Francisco, Hong Kong, and London, to the sweeping lines of The Wave in Utah.f</p>
+        <p>Frames taken across travel, product, and editorial work — from London to the De Young Museum.</p>
         <div class="link-stack">
           <a class="link-pill ext" href="https://500px.com/p/jessicakoon8898" target="_blank" rel="noopener">View full portfolio on 500px</a>
         </div>
@@ -1321,8 +1354,8 @@ Dedicated booth environment developed for the Wild Wings licensing partnership t
   <section class="about" id="about">
     <div class="about-grid">
       <div class="about-portrait" data-reveal>
-        <div class="portrait-frame portrait-frame--lg portrait-placeholder">
-          <span>Add Photo</span>
+        <div class="portrait-frame portrait-frame--lg">
+          <img loading="lazy" src="image/_DSC0945-617.jpg" alt="Jessica Koon — bio photo">
         </div>
         <div class="portrait-caption">
           <p class="portrait-name">Jessica Koon</p>
